@@ -1,0 +1,52 @@
+# /etc/skel/.bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# Put your fun stuff here.
+PS1="\[\e[0;32m\][\u@\h:\W]> \[\e[m\]"
+TERM="rxvt-unicode-256color"
+
+PATH=$PATH:~/.gem/ruby/1.9.1/bin/
+PATH=$PATH:~/.gem/ruby/2.0.0/bin/
+
+function emerge-cleanup() {
+	sudo emerge --depclean
+	sudo revdep-rebuild
+	sudo rm -rfv /var/tmp/portage/*
+	sudo rm -rfv /usr/portage/distfiles/*
+}
+
+function gem-cleanup() {
+	current_ruby_version=$(eselect ruby list | grep '*' | awk '{print $2}')
+	for ruby_version in $(eselect ruby list | tail -n +2 | awk '{print $2}'); do
+		sudo eselect ruby set $ruby_version
+		for gem in $(gem list --no-versions); do
+			gem uninstall -aIx $gem
+		done
+	done
+	sudo eselect ruby set $current_ruby_version
+}
+
+alias hist="history | grep"
+alias http="ruby -run -e httpd . -p 9090"
+alias ls="ls -lh --color=auto --group-directories-first"
+alias svim="sudo vim"
+
+alias ga="git add"
+alias gc="git commit"
+alias gl="git log --stat"
+alias gp="git push"
+alias gr="git rebase"
+alias gs="git status"
+alias gu="git pull --rebase"
