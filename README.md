@@ -1,5 +1,5 @@
 # Dotfiles
 
-Apply:
+Deploy files and settings:
     
-    puppet apply --modulepath ./modules manifests/site.pp
+    ./apply

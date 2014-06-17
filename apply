@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eu
+
+git fetch origin
+git reset --hard origin/master
+git clean -fd
+puppet apply --modulepath ./modules manifests/site.pp
