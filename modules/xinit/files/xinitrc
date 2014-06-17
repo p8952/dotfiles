@@ -1,0 +1,8 @@
+xset -b
+xset -dpms
+xset s off
+setxkbmap -option caps:escape
+setxkbmap gb
+xrdb ~/.Xresources
+wicd-gtk --tray &
+exec i3
