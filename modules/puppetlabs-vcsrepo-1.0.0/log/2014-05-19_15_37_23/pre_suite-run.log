@@ -1,0 +1,3380 @@
+[01;37m[00;00m[01;37mBegin spec/spec_helper_acceptance.rb
+[00;00m[00;37m
+centos-64-x64 15:38:25$  rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm  
+[00;00m[01;30mwarning: [00;00m[01;30m/var/tmp/rpm-tmp.4OMg0C: Header V4 RSA/SHA1 Signature, key ID 4bd6ec30: NOKEY
+[00;00m[01;30mRetrieving http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+Preparing...                [00;00m[01;30m##################################################[00;00m[01;30m
+[00;00m[01;30mpuppetlabs-release          [00;00m[01;30m############################[00;00m[01;30m####################[00;00m[01;30m##[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 5.37 seconds
+[00;00m[00;37m
+centos-64-x64 15:38:30$  yum install -y puppet  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mDetermining fastest mirrors
+[00;00m[01;30m * base: centos.mirrors.tds.net
+ * extras: mirrors.usinternet.com
+ * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mResolving Dependencies
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package puppet.noarch 0:3.6.0-1.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: facter >= 1:1.7.0 for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby >= 1.8.7 for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: hiera >= 1.0.0 for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby >= 1.8 for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby-rgen >= 0.6.5 for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby(selinux) for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: /usr/bin/ruby for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: rubygem-json for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby-shadow for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Processing Dependency: ruby-augeas for package: puppet-3.6.0-1.el6.noarch
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package facter.x86_64 1:2.0.1-1.el6 will be installed
+[00;00m[01;30m---> Package hiera.noarch 0:1.3.2-1.el6 will be installed
+[00;00m[01;30m---> Package libselinux-ruby.x86_64 0:2.0.94-5.3.el6_4.1 will be installed
+[00;00m[01;30m--> Processing Dependency: libselinux = 2.0.94-5.3.el6_4.1 for package: libselinux-ruby-2.0.94-5.3.el6_4.1.x86_64
+[00;00m[01;30m---> Package ruby.x86_64 0:1.8.7.352-13.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: ruby-libs = 1.8.7.352-13.el6 for package: ruby-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libruby.so.1.8()(64bit) for package: ruby-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m---> Package ruby-augeas.x86_64 0:0.4.1-3.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: augeas-libs >= 0.8.0 for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0(AUGEAS_0.12.0)(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0(AUGEAS_0.8.0)(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0(AUGEAS_0.11.0)(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0(AUGEAS_0.1.0)(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0(AUGEAS_0.10.0)(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libaugeas.so.0()(64bit) for package: ruby-augeas-0.4.1-3.el6.x86_64
+[00;00m[01;30m---> Package ruby-rgen.noarch 0:0.6.5-2.el6 will be installed
+[00;00m[01;30m---> Package ruby-shadow.x86_64 1:2.2.0-2.el6 will be installed
+[00;00m[01;30m---> Package rubygem-json.x86_64 0:1.5.5-1.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: rubygems for package: rubygem-json-1.5.5-1.el6.x86_64
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package augeas-libs.x86_64 0:1.0.0-5.el6_5.1 will be installed
+[00;00m[01;30m---> Package libselinux.x86_64 0:2.0.94-5.3.el6 will be updated
+[00;00m[01;30m--> Processing Dependency: libselinux = 2.0.94-5.3.el6 for package: libselinux-utils-2.0.94-5.3.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libselinux = 2.0.94-5.3.el6 for package: libselinux-devel-2.0.94-5.3.el6.x86_64
+[00;00m[01;30m---> Package libselinux.x86_64 0:2.0.94-5.3.el6_4.1 will be an update
+[00;00m[01;30m---> Package ruby-libs.x86_64 0:1.8.7.352-13.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: libssl.so.10(libssl.so.10)(64bit) for package: ruby-libs-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libcrypto.so.10(libcrypto.so.10)(64bit) for package: ruby-libs-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m--> Processing Dependency: libreadline.so.5()(64bit) for package: ruby-libs-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m---> Package rubygems.noarch 0:1.3.7-5.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: ruby-rdoc for package: rubygems-1.3.7-5.el6.noarch
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package compat-readline5.x86_64 0:5.2-17.1.el6 will be installed
+[00;00m[01;30m---> Package libselinux-devel.x86_64 0:2.0.94-5.3.el6 will be updated
+[00;00m[01;30m---> Package libselinux-devel.x86_64 0:2.0.94-5.3.el6_4.1 will be an update
+[00;00m[01;30m---> Package libselinux-utils.x86_64 0:2.0.94-5.3.el6 will be updated
+[00;00m[01;30m---> Package libselinux-utils.x86_64 0:2.0.94-5.3.el6_4.1 will be an update
+[00;00m[01;30m---> Package openssl.x86_64 0:1.0.0-27.el6_4.2 will be updated
+[00;00m[01;30m--> Processing Dependency: openssl = 1.0.0-27.el6_4.2 for package: openssl-devel-1.0.0-27.el6_4.2.x86_64
+[00;00m[01;30m---> Package openssl.x86_64 0:1.0.1e-16.el6_5.7 will be an update
+[00;00m[01;30m---> Package ruby-rdoc.x86_64 0:1.8.7.352-13.el6 will be installed
+[00;00m[01;30m--> Processing Dependency: ruby-irb = 1.8.7.352-13.el6 for package: ruby-rdoc-1.8.7.352-13.el6.x86_64
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package openssl-devel.x86_64 0:1.0.0-27.el6_4.2 will be updated
+[00;00m[01;30m---> Package openssl-devel.x86_64 0:1.0.1e-16.el6_5.7 will be an update
+[00;00m[01;30m---> Package ruby-irb.x86_64 0:1.8.7.352-13.el6 will be installed
+[00;00m[01;30m--> Finished Dependency Resolution
+[00;00m[01;30m
+Dependencies Resolved
+[00;00m[01;30m
+================================================================================
+ Package            Arch     Version                Repository             Size
+================================================================================
+Installing:
+ puppet             noarch   3.6.0-1.el6            puppetlabs-products   1.3 M
+Installing for dependencies:
+ augeas-libs        x86_64   1.0.0-5.el6_5.1        updates               309 k
+ compat-readline5   x86_64   5.2-17.1.el6           base                  130 k
+ facter             x86_64   1:2.0.1-1.el6          puppetlabs-products    84 k
+ hiera              noarch   1.3.2-1.el6            puppetlabs-products    23 k
+ libselinux-ruby    x86_64   2.0.94-5.3.el6_4.1     base                   99 k
+ ruby               x86_64   1.8.7.352-13.el6       updates               534 k
+ ruby-augeas        x86_64   0.4.1-3.el6            puppetlabs-deps        21 k
+ ruby-irb           x86_64   1.8.7.352-13.el6       updates               314 k
+ ruby-libs          x86_64   1.8.7.352-13.el6       updates               1.6 M
+ ruby-rdoc          x86_64   1.8.7.352-13.el6       updates               377 k
+ ruby-rgen          noarch   0.6.5-2.el6            puppetlabs-deps       237 k
+ ruby-shadow        x86_64   1:2.2.0-2.el6          puppetlabs-deps        13 k
+ rubygem-json       x86_64   1.5.5-1.el6            puppetlabs-deps       763 k
+ rubygems           noarch   1.3.7-5.el6            base                  207 k
+Updating for dependencies:
+ libselinux         x86_64   2.0.94-5.3.el6_4.1     base                  108 k
+ libselinux-devel   x86_64   2.0.94-5.3.el6_4.1     base                  136 k
+ libselinux-utils   x86_64   2.0.94-5.3.el6_4.1     base                   81 k
+ openssl            x86_64   1.0.1e-16.el6_5.7      updates               1.5 M
+ openssl-devel      x86_64   1.0.1e-16.el6_5.7      updates               1.2 M
+
+Transaction Summary
+================================================================================
+Install      15 Package(s)
+Upgrade       5 Package(s)
+
+[00;00m[01;30mTotal download size: 8.9 M
+[00;00m[01;30mDownloading Packages:
+[00;00m[01;30m--------------------------------------------------------------------------------
+[00;00m[01;30mTotal                                           750 kB/s | 8.9 MB     00:12     
+[00;00m[01;30mwarning: [00;00m[01;30mrpmts_HdrFromFdno: Header V4 RSA/SHA512 Signature, key ID 4bd6ec30: NOKEY
+[00;00m[01;30mRetrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+[00;00m[01;30mImporting GPG key 0x4BD6EC30:
+ Userid : Puppet Labs Release Key (Puppet Labs Release Key) <info@puppetlabs.com>
+ Package: puppetlabs-release-6-10.noarch (installed)
+ From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+[00;00m[01;30mRunning rpm_check_debug
+[00;00m[01;30mRunning Transaction Test
+[00;00m[01;30mTransaction Test Succeeded
+[00;00m[01;30mRunning Transaction
+[00;00m[01;30mWarning: RPMDB altered outside of yum.
+[00;00m[01;30m  Updating   : libselinux-2.0.94-5.3.el6_4.1.x86_64                        1/25[00;00m[01;30m 
+  Updating   : openssl-1.0.1e-16.el6_5.7.x86_64                            2/25[00;00m[01;30m 
+  Updating   : libselinux-utils-2.0.94-5.3.el6_4.1.x86_64                  3/25[00;00m[01;30m 
+  Installing : augeas-libs-1.0.0-5.el6_5.1.x86_64                          4/25[00;00m[01;30m 
+  Installing : libselinux-ruby-2.0.94-5.3.el6_4.1.x86_64                   5/25[00;00m[01;30m 
+  Installing : compat-readline5-5.2-17.1.el6.x86_64                        6/25[00;00m[01;30m 
+  Installing : ruby-libs-1.8.7.352-13.el6.x86_64                           7/25[00;00m[01;30m 
+  Installing : ruby-1.8.7.352-13.el6.x86_64                                8/25[00;00m[01;30m 
+  Installing : 1:ruby-shadow-2.2.0-2.el6.x86_64                            9/25[00;00m[01;30m 
+  Installing : ruby-rgen-0.6.5-2.el6.noarch                               10/25[00;00m[01;30m 
+  Installing : 1:facter-2.0.1-1.el6.x86_64                                11/25[00;00m[01;30m 
+  Installing : ruby-irb-1.8.7.352-13.el6.x86_64                           12/25[00;00m[01;30m 
+  Installing : ruby-rdoc-1.8.7.352-13.el6.x86_64                          13/25[00;00m[01;30m 
+  Installing : rubygems-1.3.7-5.el6.noarch                                14/25[00;00m[01;30m 
+  Installing : rubygem-json-1.5.5-1.el6.x86_64                            15/25[00;00m[01;30m 
+  Installing : hiera-1.3.2-1.el6.noarch                                   16/25[00;00m[01;30m 
+  Installing : ruby-augeas-0.4.1-3.el6.x86_64                             17/25[00;00m[01;30m 
+  Installing : puppet-3.6.0-1.el6.noarch                                  18/25[00;00m[01;30m 
+  Updating   : openssl-devel-1.0.1e-16.el6_5.7.x86_64                     19/25[00;00m[01;30m 
+  Updating   : libselinux-devel-2.0.94-5.3.el6_4.1.x86_64                 20/25[00;00m[01;30m 
+  Cleanup    : libselinux-devel-2.0.94-5.3.el6.x86_64                     21/25[00;00m[01;30m 
+  Cleanup    : openssl-devel-1.0.0-27.el6_4.2.x86_64                      22/25[00;00m[01;30m 
+  Cleanup    : libselinux-utils-2.0.94-5.3.el6.x86_64                     23/25[00;00m[01;30m 
+  Cleanup    : libselinux-2.0.94-5.3.el6.x86_64                           24/25[00;00m[01;30m 
+  Cleanup    : openssl-1.0.0-27.el6_4.2.x86_64                            25/25[00;00m[01;30m 
+  Verifying  : openssl-devel-1.0.1e-16.el6_5.7.x86_64                      1/25[00;00m[01;30m 
+  Verifying  : ruby-libs-1.8.7.352-13.el6.x86_64                           2/25[00;00m[01;30m 
+  Verifying  : libselinux-devel-2.0.94-5.3.el6_4.1.x86_64                  3/25[00;00m[01;30m 
+  Verifying  : libselinux-2.0.94-5.3.el6_4.1.x86_64                        4/25[00;00m[01;30m 
+  Verifying  : 1:ruby-shadow-2.2.0-2.el6.x86_64                            5/25[00;00m[01;30m 
+  Verifying  : libselinux-utils-2.0.94-5.3.el6_4.1.x86_64                  6/25[00;00m[01;30m 
+  Verifying  : ruby-augeas-0.4.1-3.el6.x86_64                              7/25[00;00m[01;30m 
+  Verifying  : compat-readline5-5.2-17.1.el6.x86_64                        8/25[00;00m[01;30m 
+  Verifying  : ruby-rdoc-1.8.7.352-13.el6.x86_64                           9/25[00;00m[01;30m 
+  Verifying  : openssl-1.0.1e-16.el6_5.7.x86_64                           10/25[00;00m[01;30m 
+  Verifying  : rubygems-1.3.7-5.el6.noarch                                11/25[00;00m[01;30m 
+  Verifying  : ruby-rgen-0.6.5-2.el6.noarch                               12/25[00;00m[01;30m 
+  Verifying  : puppet-3.6.0-1.el6.noarch                                  13/25[00;00m[01;30m 
+  Verifying  : 1:facter-2.0.1-1.el6.x86_64                                14/25[00;00m[01;30m 
+  Verifying  : ruby-irb-1.8.7.352-13.el6.x86_64                           15/25[00;00m[01;30m 
+  Verifying  : rubygem-json-1.5.5-1.el6.x86_64                            16/25[00;00m[01;30m 
+  Verifying  : augeas-libs-1.0.0-5.el6_5.1.x86_64                         17/25[00;00m[01;30m 
+  Verifying  : libselinux-ruby-2.0.94-5.3.el6_4.1.x86_64                  18/25[00;00m[01;30m 
+  Verifying  : ruby-1.8.7.352-13.el6.x86_64                               19/25[00;00m[01;30m 
+  Verifying  : hiera-1.3.2-1.el6.noarch                                   20/25[00;00m[01;30m 
+  Verifying  : libselinux-devel-2.0.94-5.3.el6.x86_64                     21/25[00;00m[01;30m 
+  Verifying  : libselinux-2.0.94-5.3.el6.x86_64                           22/25[00;00m[01;30m 
+  Verifying  : libselinux-utils-2.0.94-5.3.el6.x86_64                     23/25[00;00m[01;30m 
+  Verifying  : openssl-1.0.0-27.el6_4.2.x86_64                            24/25[00;00m[01;30m 
+  Verifying  : openssl-devel-1.0.0-27.el6_4.2.x86_64                      25/25[00;00m[01;30m 
+
+Installed:
+  puppet.noarch 0:3.6.0-1.el6                                                   
+
+Dependency Installed:
+  augeas-libs.x86_64 0:1.0.0-5.el6_5.1                                          
+  compat-readline5.x86_64 0:5.2-17.1.el6                                        
+  facter.x86_64 1:2.0.1-1.el6                                                   
+  hiera.noarch 0:1.3.2-1.el6                                                    
+  libselinux-ruby.x86_64 0:2.0.94-5.3.el6_4.1                                   
+  ruby.x86_64 0:1.8.7.352-13.el6                                                
+  ruby-augeas.x86_64 0:0.4.1-3.el6                                              
+  ruby-irb.x86_64 0:1.8.7.352-13.el6                                            
+  ruby-libs.x86_64 0:1.8.7.352-13.el6                                           
+  ruby-rdoc.x86_64 0:1.8.7.352-13.el6                                           
+  ruby-rgen.noarch 0:0.6.5-2.el6                                                
+  ruby-shadow.x86_64 1:2.2.0-2.el6                                              
+  rubygem-json.x86_64 0:1.5.5-1.el6                                             
+  rubygems.noarch 0:1.3.7-5.el6                                                 
+
+Dependency Updated:
+  libselinux.x86_64 0:2.0.94-5.3.el6_4.1                                        
+  libselinux-devel.x86_64 0:2.0.94-5.3.el6_4.1                                  
+  libselinux-utils.x86_64 0:2.0.94-5.3.el6_4.1                                  
+  openssl.x86_64 0:1.0.1e-16.el6_5.7                                            
+  openssl-devel.x86_64 0:1.0.1e-16.el6_5.7                                      
+
+[00;00m[01;30mComplete!
+[00;00m[00;37m
+centos-64-x64 executed in 53.59 seconds
+[00;00m[00;32mspec/spec_helper_acceptance.rb passed in 119.98 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/basic_auth/basic_auth_checkout_http.rb
+[00;00m[01;37m
+C3492 - checkout with basic auth (http protocol)
+[00;00m[01;37m
+HTTP not supported yet for basic auth using git. See FM-1331
+[00;00m[00;37mspec/acceptance/beaker/git/basic_auth/basic_auth_checkout_http.rb skipped in 0.00 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/basic_auth/basic_auth_checkout_https.rb
+[00;00m[01;37m
+C3493 - checkout with basic auth (https protocol)
+[00;00m[01;37m
+waiting for CA trust solution
+[00;00m[00;37mspec/acceptance/beaker/git/basic_auth/basic_auth_checkout_https.rb skipped in 0.00 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb
+[00;00m[01;37m
+C3438 - checkout a branch (file protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:23$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.LkTScA
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:23$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mResolving Dependencies
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package git.x86_64 0:1.7.1-3.el6_4.1 will be installed
+[00;00m[01;30m--> Processing Dependency: perl-Git = 1.7.1-3.el6_4.1 for package: git-1.7.1-3.el6_4.1.x86_64
+[00;00m[01;30m--> Processing Dependency: perl(Git) for package: git-1.7.1-3.el6_4.1.x86_64
+[00;00m[01;30m--> Processing Dependency: perl(Error) for package: git-1.7.1-3.el6_4.1.x86_64
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package perl-Error.noarch 1:0.17015-4.el6 will be installed
+[00;00m[01;30m---> Package perl-Git.noarch 0:1.7.1-3.el6_4.1 will be installed
+[00;00m[01;30m--> Finished Dependency Resolution
+[00;00m[01;30m
+Dependencies Resolved
+[00;00m[01;30m
+================================================================================
+ Package            Arch           Version                   Repository    Size
+================================================================================
+Installing:
+ git                x86_64         1.7.1-3.el6_4.1           base         4.6 M
+Installing for dependencies:
+ perl-Error         noarch         1:0.17015-4.el6           base          29 k
+ perl-Git           noarch         1.7.1-3.el6_4.1           base          28 k
+
+Transaction Summary
+================================================================================
+Install       3 Package(s)
+
+[00;00m[01;30mTotal download size: 4.7 M
+[00;00m[01;30mInstalled size: 15 M
+[00;00m[01;30mDownloading Packages:
+[00;00m[01;30m--------------------------------------------------------------------------------
+[00;00m[01;30mTotal                                           642 kB/s | 4.7 MB     00:07     
+[00;00m[01;30mRunning rpm_check_debug
+[00;00m[01;30mRunning Transaction Test
+[00;00m[01;30mTransaction Test Succeeded
+[00;00m[01;30mRunning Transaction
+[00;00m[01;30m  Installing : 1:perl-Error-0.17015-4.el6.noarch                            1/3[00;00m[01;30m 
+  Installing : perl-Git-1.7.1-3.el6_4.1.noarch                              2/3[00;00m[01;30m 
+  Installing : git-1.7.1-3.el6_4.1.x86_64                                   3/3[00;00m[01;30m 
+  Verifying  : git-1.7.1-3.el6_4.1.x86_64                                   1/3[00;00m[01;30m 
+  Verifying  : perl-Git-1.7.1-3.el6_4.1.noarch                              2/3[00;00m[01;30m 
+  Verifying  : 1:perl-Error-0.17015-4.el6.noarch                            3/3[00;00m[01;30m 
+
+Installed:
+  git.x86_64 0:1.7.1-3.el6_4.1                                                  
+
+Dependency Installed:
+  perl-Error.noarch 1:0.17015-4.el6      perl-Git.noarch 0:1.7.1-3.el6_4.1     
+
+[00;00m[01;30mComplete!
+[00;00m[00;37m
+centos-64-x64 executed in 8.81 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.LkTScA {}
+[00;00m[00;37m
+centos-64-x64 15:39:32$  cd /tmp/vcsrepo.LkTScA && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.LkTScA/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 6bec2b7] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master cb0d629] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master cd4b95e] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 85b287f] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 3dd825f] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 6174688] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:32$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.bUVhps
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-a677zd centos-64-x64:/tmp/apply_manifest.pp.bUVhps {}
+[00;00m[00;37m
+centos-64-x64 15:39:32$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.bUVhps
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.bUVhps:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.bUVhps:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.55 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.bUVhps
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.bUVhps:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.bUVhps:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb:30
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb:20
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:33$  rm -fr /tmp/vcsrepo.LkTScA  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_file.rb errored in 9.48 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb
+[00;00m[01;37m
+C3437 - checkout a branch (file path)
+[00;00m[00;37m
+centos-64-x64 15:39:33$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.tqIWCw
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:33$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.26 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.tqIWCw {}
+[00;00m[00;37m
+centos-64-x64 15:39:33$  cd /tmp/vcsrepo.tqIWCw && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.tqIWCw/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 1822f40] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 9a2fd00] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 1fff3b9] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 5944b5d] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch ed411eb] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch c6e90a0] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:33$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.IycIOb
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-gn6eoq centos-64-x64:/tmp/apply_manifest.pp.IycIOb {}
+[00;00m[00;37m
+centos-64-x64 15:39:33$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.IycIOb
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.IycIOb:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.IycIOb:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.IycIOb
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.IycIOb:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.IycIOb:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb:30
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb:20
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:34$  rm -fr /tmp/vcsrepo.tqIWCw  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_file_path.rb errored in 0.88 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb
+[00;00m[01;37m
+C3436 - checkout a branch (git protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:34$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.pUZoLj
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:34$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.pUZoLj {}
+[00;00m[00;37m
+centos-64-x64 15:39:34$  cd /tmp/vcsrepo.pUZoLj && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.pUZoLj/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 1822f40] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 9a2fd00] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 1fff3b9] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 5944b5d] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch ed411eb] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch c6e90a0] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start git daemon
+[00;00m[00;37m
+centos-64-x64 15:39:34$  yum -y  install git-daemon  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mResolving Dependencies
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package git-daemon.x86_64 0:1.7.1-3.el6_4.1 will be installed
+[00;00m[01;30m--> Processing Dependency: xinetd for package: git-daemon-1.7.1-3.el6_4.1.x86_64
+[00;00m[01;30m--> Running transaction check
+[00;00m[01;30m---> Package xinetd.x86_64 2:2.3.14-39.el6_4 will be installed
+[00;00m[01;30m--> Finished Dependency Resolution
+[00;00m[01;30m
+Dependencies Resolved
+[00;00m[01;30m
+================================================================================
+ Package            Arch           Version                   Repository    Size
+================================================================================
+Installing:
+ git-daemon         x86_64         1.7.1-3.el6_4.1           base         248 k
+Installing for dependencies:
+ xinetd             x86_64         2:2.3.14-39.el6_4         base         121 k
+
+Transaction Summary
+================================================================================
+Install       2 Package(s)
+
+[00;00m[01;30mTotal download size: 369 k
+[00;00m[01;30mInstalled size: 754 k
+[00;00m[01;30mDownloading Packages:
+[00;00m[01;30m--------------------------------------------------------------------------------
+[00;00m[01;30mTotal                                            68 kB/s | 369 kB     00:05     
+[00;00m[01;30mRunning rpm_check_debug
+[00;00m[01;30mRunning Transaction Test
+[00;00m[01;30mTransaction Test Succeeded
+[00;00m[01;30mRunning Transaction
+[00;00m[01;30m  Installing : 2:xinetd-2.3.14-39.el6_4.x86_64                              1/2[00;00m[01;30m 
+  Installing : git-daemon-1.7.1-3.el6_4.1.x86_64                            2/2[00;00m[01;30m 
+  Verifying  : git-daemon-1.7.1-3.el6_4.1.x86_64                            1/2[00;00m[01;30m 
+  Verifying  : 2:xinetd-2.3.14-39.el6_4.x86_64                              2/2[00;00m[01;30m 
+
+Installed:
+  git-daemon.x86_64 0:1.7.1-3.el6_4.1                                           
+
+Dependency Installed:
+  xinetd.x86_64 2:2.3.14-39.el6_4                                               
+
+[00;00m[01;30mComplete!
+[00;00m[00;37m
+centos-64-x64 executed in 6.17 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:40$  git daemon --base-path=/tmp/vcsrepo.pUZoLj  --export-all --reuseaddr --verbose --detach  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:40$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.9WqxZq
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-s4dupl centos-64-x64:/tmp/apply_manifest.pp.9WqxZq {}
+[00;00m[00;37m
+centos-64-x64 15:39:40$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.9WqxZq
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.9WqxZq:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.9WqxZq:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.9WqxZq
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.9WqxZq:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.9WqxZq:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb:35
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb:25
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:41$  rm -fr /tmp/vcsrepo.pUZoLj  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:41$  pkill -9 git-daemon  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_git.rb errored in 7.06 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb
+[00;00m[01;37m
+C3441 - checkout a branch (http protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:41$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.mPJpnM
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:41$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.mPJpnM {}
+[00;00m[00;37m
+centos-64-x64 15:39:41$  cd /tmp/vcsrepo.mPJpnM && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.mPJpnM/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 6f296ea] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 512ab3c] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master ed7a02f] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 8b7222c] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 446985f] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch e9a44e4] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start http server
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-yegx2c centos-64-x64:/tmp/http_daemon.rb {}
+[00;00m[00;37m
+centos-64-x64 15:39:41$  ruby /tmp/http_daemon.rb  
+[00;00m[01;30m[2014-05-19 19:39:40] INFO  WEBrick 1.3.1
+[00;00m[01;30m[2014-05-19 19:39:40] INFO  ruby 1.8.7 (2011-06-30) [x86_64-linux]
+[00;00m[01;30m[2014-05-19 19:39:40] WARN  TCPServer Error: Address already in use - bind(2)
+[00;00m[00;37m
+centos-64-x64 executed in 0.10 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:41$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.2rYoGM
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-om6vcu centos-64-x64:/tmp/apply_manifest.pp.2rYoGM {}
+[00;00m[00;37m
+centos-64-x64 15:39:41$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.2rYoGM
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.2rYoGM:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.2rYoGM:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.2rYoGM
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.2rYoGM:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.2rYoGM:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb:43
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb:33
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:42$  rm -fr /tmp/vcsrepo.mPJpnM  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:42$  ps ax | grep 'ruby /tmp/http_daemon.rb' | grep -v grep | awk '{print "kill -9 " $1}' | sh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_http.rb errored in 0.98 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb
+[00;00m[01;37m
+C3442 - checkout a branch (https protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:42$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.VPO3xx
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:42$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.24 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.VPO3xx {}
+[00;00m[00;37m
+centos-64-x64 15:39:42$  cd /tmp/vcsrepo.VPO3xx && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.VPO3xx/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 2aacb35] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master d0f1fec] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master d37b888] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch d7c25bb] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 04a907a] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 7e23f04] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start https server
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-zsvaxl centos-64-x64:/tmp/https_daemon.rb {}
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:42$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.txFRVy
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-mlirk2 centos-64-x64:/tmp/apply_manifest.pp.txFRVy {}
+[00;00m[00;37m
+centos-64-x64 15:39:42$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.txFRVy
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.txFRVy:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.txFRVy:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.52 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.txFRVy
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.txFRVy:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.txFRVy:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb:50
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb:40
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:43$  rm -fr /tmp/vcsrepo.VPO3xx  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:43$  ps ax | grep 'ruby /tmp/https_daemon.rb' | grep -v grep | awk '{print "kill -9 " $1}' | sh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_https.rb errored in 0.88 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb
+[00;00m[01;37m
+C3439 - checkout a branch (ssh protocol, scp syntax)
+[00;00m[00;37m
+centos-64-x64 15:39:43$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.zIH3jV
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:43$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.24 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.zIH3jV {}
+[00;00m[00;37m
+centos-64-x64 15:39:43$  cd /tmp/vcsrepo.zIH3jV && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.zIH3jV/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 2aacb35] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master d0f1fec] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master d37b888] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch d7c25bb] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 04a907a] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 7e23f04] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - establish ssh keys
+[00;00m[00;37m
+centos-64-x64 15:39:43$  ssh-keygen -q -t rsa -f /root/.ssh/id_rsa -N ""  
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:43$  echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:43$  chown -R root:root /root/.ssh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:43$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.uUM6GP
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-124zgsc centos-64-x64:/tmp/apply_manifest.pp.uUM6GP {}
+[00;00m[00;37m
+centos-64-x64 15:39:43$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.uUM6GP
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.uUM6GP:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.uUM6GP:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.55 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.uUM6GP
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.uUM6GP:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.uUM6GP:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb:40
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb:30
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:44$  rm -fr /tmp/vcsrepo.zIH3jV  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:44$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.qU3190
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-1ufvrf centos-64-x64:/tmp/apply_manifest.pp.qU3190 {}
+[00;00m[00;37m
+centos-64-x64 15:39:44$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.qU3190
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.06 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528383'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa]: Filebucketed /root/.ssh/id_rsa to puppet with sum 07c867a1f786a6fa465b0c823798f0f6[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa]/ensure: removed[00;00m[01;30m
+[00;00m[01;30mInfo: Creating state file /var/lib/puppet/state/state.yaml[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.03 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.78 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:44$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.842ta3
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-1vlgl8v centos-64-x64:/tmp/apply_manifest.pp.842ta3 {}
+[00;00m[00;37m
+centos-64-x64 15:39:45$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.842ta3
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.07 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528383'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]: Filebucketed /root/.ssh/id_rsa.pub to puppet with sum db0cd3ddc2f991ce0d066271b0d5112e[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.03 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.78 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_scp.rb errored in 2.53 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb
+[00;00m[01;37m
+C3440 - checkout a branch (ssh protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:45$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.0t8GA9
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:45$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.0t8GA9 {}
+[00;00m[00;37m
+centos-64-x64 15:39:46$  cd /tmp/vcsrepo.0t8GA9 && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.0t8GA9/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 894ea02] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 4ed492b] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master afe6021] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 3129268] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch b5a06c5] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 4738805] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - establish ssh keys
+[00;00m[00;37m
+centos-64-x64 15:39:46$  ssh-keygen -q -t rsa -f /root/.ssh/id_rsa -N ""  
+[00;00m[00;37m
+centos-64-x64 executed in 0.09 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:46$  echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:46$  chown -R root:root /root/.ssh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * checkout a branch with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:46$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.y2qVdX
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-8bz32z centos-64-x64:/tmp/apply_manifest.pp.y2qVdX {}
+[00;00m[00;37m
+centos-64-x64 15:39:46$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.y2qVdX
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.y2qVdX:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.y2qVdX:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.y2qVdX
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.y2qVdX:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.y2qVdX:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb:40
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb:30
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb:7
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb:7
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:46$  rm -fr /tmp/vcsrepo.0t8GA9  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:46$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.GuHeI3
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-ge7qbh centos-64-x64:/tmp/apply_manifest.pp.GuHeI3 {}
+[00;00m[00;37m
+centos-64-x64 15:39:46$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.GuHeI3
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.07 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528385'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa]: Filebucketed /root/.ssh/id_rsa to puppet with sum 638388e45b5d98cbbde633300fe705e2[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.03 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.77 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:47$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.hfD5W4
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-py23ux centos-64-x64:/tmp/apply_manifest.pp.hfD5W4 {}
+[00;00m[00;37m
+centos-64-x64 15:39:47$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.hfD5W4
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.07 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528386'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]: Filebucketed /root/.ssh/id_rsa.pub to puppet with sum 75e262de8afe8e19cc52de2ad3437229[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.03 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.79 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/branch_checkout/branch_checkout_ssh.rb errored in 2.58 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_file.rb
+[00;00m[01;37m
+C3427 - clone (file protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:48$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.1FlGNR
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:48$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.1FlGNR {}
+[00;00m[00;37m
+centos-64-x64 15:39:48$  cd /tmp/vcsrepo.1FlGNR && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.1FlGNR/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) fe4d18a] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master e26b2b8] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master f2c51f1] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch fc150ba] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch d143c8a] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 39803d3] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:48$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.GtslMA
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-cldb75 centos-64-x64:/tmp/apply_manifest.pp.GtslMA {}
+[00;00m[00;37m
+centos-64-x64 15:39:48$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.GtslMA
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.GtslMA:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.GtslMA:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.55 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.GtslMA
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.GtslMA:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.GtslMA:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file.rb:28
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file.rb:19
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:49$  rm -fr /tmp/vcsrepo.1FlGNR  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_file.rb errored in 0.89 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_file_path.rb
+[00;00m[01;37m
+C3426 - clone (file path)
+[00;00m[00;37m
+centos-64-x64 15:39:49$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.zLLiIp
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:49$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.zLLiIp {}
+[00;00m[00;37m
+centos-64-x64 15:39:49$  cd /tmp/vcsrepo.zLLiIp && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.zLLiIp/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) fe4d18a] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master e26b2b8] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master f2c51f1] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch fc150ba] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch d143c8a] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 39803d3] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:49$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.S1yemn
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-dv111m centos-64-x64:/tmp/apply_manifest.pp.S1yemn {}
+[00;00m[00;37m
+centos-64-x64 15:39:49$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.S1yemn
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.S1yemn:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.S1yemn:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.S1yemn
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.S1yemn:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.S1yemn:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file_path.rb:28
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file_path.rb:19
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file_path.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_file_path.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:50$  rm -fr /tmp/vcsrepo.zLLiIp  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_file_path.rb errored in 0.88 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_git.rb
+[00;00m[01;37m
+C3425 - clone (git protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:50$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.ySFn1D
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:50$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.ySFn1D {}
+[00;00m[00;37m
+centos-64-x64 15:39:50$  cd /tmp/vcsrepo.ySFn1D && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.ySFn1D/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) bc51bfd] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 29a6731] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 8c78406] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch b7ad2cb] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch f82219f] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 635391d] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start git daemon
+[00;00m[00;37m
+centos-64-x64 15:39:50$  yum -y  install git-daemon  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-daemon-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.27 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:50$  git daemon --base-path=/tmp/vcsrepo.ySFn1D  --export-all --reuseaddr --verbose --detach  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:50$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.hxVxTP
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-9iscvk centos-64-x64:/tmp/apply_manifest.pp.hxVxTP {}
+[00;00m[00;37m
+centos-64-x64 15:39:50$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.hxVxTP
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.hxVxTP:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.hxVxTP:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.hxVxTP
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.hxVxTP:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.hxVxTP:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_git.rb:33
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_git.rb:24
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_git.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_git.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:51$  rm -fr /tmp/vcsrepo.ySFn1D  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:51$  pkill -9 git-daemon  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_git.rb errored in 1.16 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_http.rb
+[00;00m[01;37m
+C3430 - clone (http protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:51$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.49X2tM
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:51$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.26 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.49X2tM {}
+[00;00m[00;37m
+centos-64-x64 15:39:51$  cd /tmp/vcsrepo.49X2tM && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.49X2tM/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 38c90a8] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 929bcda] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master c600de2] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 6b9dfc1] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch a24dd25] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 943358f] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start http server
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-vg0c8i centos-64-x64:/tmp/http_daemon.rb {}
+[00;00m[00;37m
+centos-64-x64 15:39:51$  ruby /tmp/http_daemon.rb  
+[00;00m[01;30m[2014-05-19 19:39:50] INFO  WEBrick 1.3.1
+[00;00m[01;30m[2014-05-19 19:39:50] INFO  ruby 1.8.7 (2011-06-30) [x86_64-linux]
+[00;00m[01;30m[2014-05-19 19:39:50] WARN  TCPServer Error: Address already in use - bind(2)
+[00;00m[00;37m
+centos-64-x64 executed in 0.10 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:51$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.H6XTcG
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-bfbdsd centos-64-x64:/tmp/apply_manifest.pp.H6XTcG {}
+[00;00m[00;37m
+centos-64-x64 15:39:51$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.H6XTcG
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.H6XTcG:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.H6XTcG:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.H6XTcG
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.H6XTcG:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.H6XTcG:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_http.rb:41
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_http.rb:32
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_http.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_http.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:52$  rm -fr /tmp/vcsrepo.49X2tM  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:52$  ps ax | grep 'ruby /tmp/http_daemon.rb' | grep -v grep | awk '{print "kill -9 " $1}' | sh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_http.rb errored in 1.00 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_https.rb
+[00;00m[01;37m
+C3431 - clone (https protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:52$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.tVl6AC
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:52$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.tVl6AC {}
+[00;00m[00;37m
+centos-64-x64 15:39:52$  cd /tmp/vcsrepo.tVl6AC && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.tVl6AC/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 8f2bfb9] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 57464c6] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 7794f9d] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 5b3b993] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch d2c70c5] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 64d144f] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - start https server
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-123mthx centos-64-x64:/tmp/https_daemon.rb {}
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:52$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.0YSnsJ
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-qb1f6w centos-64-x64:/tmp/apply_manifest.pp.0YSnsJ {}
+[00;00m[00;37m
+centos-64-x64 15:39:52$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.0YSnsJ
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.0YSnsJ:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.0YSnsJ:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.0YSnsJ
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.0YSnsJ:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.0YSnsJ:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_https.rb:48
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_https.rb:39
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_https.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_https.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:53$  rm -fr /tmp/vcsrepo.tVl6AC  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:53$  ps ax | grep 'ruby /tmp/https_daemon.rb' | grep -v grep | awk '{print "kill -9 " $1}' | sh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_https.rb errored in 0.89 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb
+[00;00m[01;37m
+C3511 - clone over an existing repo with force
+[00;00m[00;37m
+centos-64-x64 15:39:53$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.xMHcto
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:53$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.xMHcto {}
+[00;00m[00;37m
+centos-64-x64 15:39:53$  cd /tmp/vcsrepo.xMHcto && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.xMHcto/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 0aea9a7] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 2911426] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master c6de588] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch b54c22e] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 354c8b2] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 4ba7494] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:53$  mkdir /tmp/vcsrepo.xMHcto/testrepo_already_exists  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:53$  cd /tmp/vcsrepo.xMHcto/testrepo_already_exists && git init  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.xMHcto/testrepo_already_exists/.git/
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:53$  cd /tmp/vcsrepo.xMHcto/testrepo_already_exists && touch a && git add a && git commit -m 'a'  
+[00;00m[01;30m[master (root-commit) d624e55] a
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 a
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * clone over existing repo with force using puppet
+[00;00m[00;37m
+centos-64-x64 15:39:53$  cd /tmp/vcsrepo.xMHcto/testrepo_already_exists && git log --pretty=format:"%h"  
+[00;00m[01;30md624e55[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:53$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.LeRezT
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-19o84e2 centos-64-x64:/tmp/apply_manifest.pp.LeRezT {}
+[00;00m[00;37m
+centos-64-x64 15:39:53$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.LeRezT
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.LeRezT:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.LeRezT:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.LeRezT
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.LeRezT:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.LeRezT:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb:35
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb:22
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:54$  rm -fr /tmp/vcsrepo.xMHcto  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_over_different_exiting_repo_with_force.rb errored in 0.91 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb
+[00;00m[01;37m
+C3507 - clone repo with excludes in repo
+[00;00m[00;37m
+centos-64-x64 15:39:54$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.SiBIhM
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:54$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.SiBIhM {}
+[00;00m[00;37m
+centos-64-x64 15:39:54$  cd /tmp/vcsrepo.SiBIhM && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.SiBIhM/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 27d733c] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 3f96188] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master fab98e5] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch d5a0be7] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch d705374] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch ba00c58] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * clone repo with excludes in repo with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:54$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.4Ra0Sh
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-podm3l centos-64-x64:/tmp/apply_manifest.pp.4Ra0Sh {}
+[00;00m[00;37m
+centos-64-x64 15:39:54$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.4Ra0Sh
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.4Ra0Sh:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.4Ra0Sh:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.52 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.4Ra0Sh
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.4Ra0Sh:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.4Ra0Sh:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb:31
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb:21
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb:8
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb:8
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:54$  rm -fr /tmp/vcsrepo.SiBIhM  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_repo_with_excludes_in_repo.rb errored in 0.86 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb
+[00;00m[01;37m
+C3508 - clone repo with excludes not in repo
+[00;00m[00;37m
+centos-64-x64 15:39:54$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.HRpnAL
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:54$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.24 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.HRpnAL {}
+[00;00m[00;37m
+centos-64-x64 15:39:55$  cd /tmp/vcsrepo.HRpnAL && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.HRpnAL/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 80ffa3a] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 7c7a69d] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 23e15b2] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch b2f390d] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 1193f99] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 44299fc] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * clone repo with excludes not in repo with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:55$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.1qfqfv
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-1j38yn1 centos-64-x64:/tmp/apply_manifest.pp.1qfqfv {}
+[00;00m[00;37m
+centos-64-x64 15:39:55$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.1qfqfv
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.1qfqfv:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.1qfqfv:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.1qfqfv
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.1qfqfv:6 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.1qfqfv:6 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb:31
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb:21
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb:8
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb:8
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:55$  rm -fr /tmp/vcsrepo.HRpnAL  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_repo_with_excludes_not_in_repo.rb errored in 0.86 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_scp.rb
+[00;00m[01;37m
+C3428 - clone (ssh protocol, scp syntax)
+[00;00m[00;37m
+centos-64-x64 15:39:55$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.UGHx8U
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:55$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.31 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.UGHx8U {}
+[00;00m[00;37m
+centos-64-x64 15:39:56$  cd /tmp/vcsrepo.UGHx8U && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.UGHx8U/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 9a54734] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 6a53d20] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 8e6800c] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 24e82e6] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch d5577cd] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 94c64f4] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - establish ssh keys
+[00;00m[00;37m
+centos-64-x64 15:39:56$  ssh-keygen -q -t rsa -f /root/.ssh/id_rsa -N ""  
+[00;00m[00;37m
+centos-64-x64 executed in 0.08 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:56$  echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:56$  chown -R root:root /root/.ssh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:56$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.8e0UQX
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-gcj3mn centos-64-x64:/tmp/apply_manifest.pp.8e0UQX {}
+[00;00m[00;37m
+centos-64-x64 15:39:56$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.8e0UQX
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.8e0UQX:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.8e0UQX:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.54 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.8e0UQX
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.8e0UQX:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.8e0UQX:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_scp.rb:38
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_scp.rb:29
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_scp.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_scp.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:56$  rm -fr /tmp/vcsrepo.UGHx8U  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:56$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.5nPl9O
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-14ptj0u centos-64-x64:/tmp/apply_manifest.pp.5nPl9O {}
+[00;00m[00;37m
+centos-64-x64 15:39:56$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.5nPl9O
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.06 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528395'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa]: Filebucketed /root/.ssh/id_rsa to puppet with sum a5e146f0860467ffc54bfad50c1ae776[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.03 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.78 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:57$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.XfPKRV
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-c5umgd centos-64-x64:/tmp/apply_manifest.pp.XfPKRV {}
+[00;00m[00;37m
+centos-64-x64 15:39:57$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.XfPKRV
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.06 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528396'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]: Filebucketed /root/.ssh/id_rsa.pub to puppet with sum e82ff0f768cfcaf18bfdde9eca735abe[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.07 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.81 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_scp.rb errored in 2.66 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/clone/clone_ssh.rb
+[00;00m[01;37m
+C3429 - clone (ssh protocol)
+[00;00m[00;37m
+centos-64-x64 15:39:58$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.ywQJje
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:39:58$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.26 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.ywQJje {}
+[00;00m[00;37m
+centos-64-x64 15:39:58$  cd /tmp/vcsrepo.ywQJje && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.ywQJje/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) e5fc684] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master edbfc8b] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master d0f5b5d] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 9a27ee8] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch 488461b] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch 67f949f] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * setup - establish ssh keys
+[00;00m[00;37m
+centos-64-x64 15:39:58$  ssh-keygen -q -t rsa -f /root/.ssh/id_rsa -N ""  
+[00;00m[00;37m
+centos-64-x64 executed in 0.17 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:58$  echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:58$  chown -R root:root /root/.ssh  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * clone with puppet
+[00;00m[00;37m
+centos-64-x64 15:39:58$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.keQeh6
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-1kwmgny centos-64-x64:/tmp/apply_manifest.pp.keQeh6 {}
+[00;00m[00;37m
+centos-64-x64 15:39:59$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.keQeh6
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.keQeh6:5 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.keQeh6:5 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.53 seconds
+[00;00m[00;37mExited: 1
+[00;00m[01;31m#<Beaker::Host::CommandFailure: Host 'centos-64-x64' exited with 1 running:
+ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.keQeh6
+Last 10 lines of output were:
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.keQeh6:5 on node centos-64-x64.corp.puppetlabs.net
+	Wrapped exception:
+	Invalid resource type vcsrepo[0m
+	[1;31mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.keQeh6:5 on node centos-64-x64.corp.puppetlabs.net[0m>
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_ssh.rb:38
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_ssh.rb:29
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_ssh.rb:6
+[00;00m[01;31m/Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/beaker/git/clone/clone_ssh.rb:6
+[00;00m[01;31m/usr/local/var/rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/beaker-1.11.1/bin/beaker:6
+[00;00m[00;37m
+centos-64-x64 15:39:59$  rm -fr /tmp/vcsrepo.ywQJje  
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37m
+centos-64-x64 15:39:59$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.roc6Pk
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-a85j7c centos-64-x64:/tmp/apply_manifest.pp.roc6Pk {}
+[00;00m[00;37m
+centos-64-x64 15:39:59$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.roc6Pk
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.07 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528398'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa]: Filebucketed /root/.ssh/id_rsa to puppet with sum 96c0a51c2929dba395f3eaec24e9891a[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.02 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.76 seconds
+[00;00m[00;37m
+centos-64-x64 15:40:00$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.2CT3nd
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-vcri3s centos-64-x64:/tmp/apply_manifest.pp.2CT3nd {}
+[00;00m[00;37m
+centos-64-x64 15:40:00$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.2CT3nd
+[00;00m[01;30m[mNotice: Compiled catalog for centos-64-x64.corp.puppetlabs.net in environment production in 0.07 seconds[00;00m[01;30m
+[00;00m[01;30mInfo: Applying configuration version '1400528399'[00;00m[01;30m
+[00;00m[01;30mInfo: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]: Filebucketed /root/.ssh/id_rsa.pub to puppet with sum 1eac8799a195607eceb27f4951f70875[00;00m[01;30m
+[00;00m[01;30m[mNotice: /Stage[main]/Main/File[/root/.ssh/id_rsa.pub]/ensure: removed[00;00m[01;30m
+[00;00m[01;30m[mNotice: Finished catalog run in 0.02 seconds[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.78 seconds
+[00;00m[00;33mWarning: spec/acceptance/beaker/git/clone/clone_ssh.rb errored in 2.63 seconds
+[00;00m[01;37m[00;00m[01;37mBegin spec/acceptance/beaker/git/compression/compression_0_checkout.rb
+[00;00m[01;37m
+C3495 - checkout with compression 0
+[00;00m[00;37m
+centos-64-x64 15:40:01$  mktemp -td vcsrepo.XXXXXX  
+[00;00m[01;30m/tmp/vcsrepo.qtLYmH
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[01;37m
+  * setup - create repo
+[00;00m[00;37m
+centos-64-x64 15:40:01$  yum -y  install git  
+[00;00m[01;30mLoaded plugins: fastestmirror, security
+[00;00m[01;30mLoading mirror speeds from cached hostfile
+[00;00m[01;30m * base: centos.mirrors.tds.net
+[00;00m[01;30m * extras: mirrors.usinternet.com
+[00;00m[01;30m * updates: mirror.steadfast.net
+[00;00m[01;30mSetting up Install Process
+[00;00m[01;30mPackage git-1.7.1-3.el6_4.1.x86_64 already installed and latest version
+[00;00m[01;30mNothing to do
+[00;00m[00;37m
+centos-64-x64 executed in 0.25 seconds
+[00;00m[00;37mlocalhost $ scp /Users/morgan/work/puppetlabs-vcsrepo/spec/acceptance/files/create_git_repo.sh centos-64-x64:/tmp/vcsrepo.qtLYmH {}
+[00;00m[00;37m
+centos-64-x64 15:40:01$  cd /tmp/vcsrepo.qtLYmH && ./create_git_repo.sh  
+[00;00m[01;30mInitialized empty Git repository in /tmp/vcsrepo.qtLYmH/testrepo/.git/
+[00;00m[01;30mfatal: Failed to resolve 'HEAD' as a valid ref.
+[00;00m[01;30m[master (root-commit) 20dab15] add file1
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+[00;00m[01;30m[master 05d93db] add file2
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+[00;00m[01;30m[master 8458178] add file3
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file3.txt
+[00;00m[01;30mSwitched to a new branch 'a_branch'
+[00;00m[01;30m[a_branch 7c34a6e] add file4
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file4.txt
+[00;00m[01;30m[a_branch b71ff05] add file5
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file5.txt
+[00;00m[01;30m[a_branch b8284a0] add file6
+ Committer: root <root@centos-64-x64.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file6.txt
+[00;00m[01;30mSwitched to branch 'master'
+[00;00m[00;37m
+centos-64-x64 executed in 0.04 seconds
+[00;00m[01;37m
+  * checkout with compression 0 with puppet
+[00;00m[00;37m
+centos-64-x64 15:40:01$  mktemp -t apply_manifest.pp.XXXXXX  
+[00;00m[01;30m/tmp/apply_manifest.pp.VITf22
+[00;00m[00;37m
+centos-64-x64 executed in 0.01 seconds
+[00;00m[00;37mlocalhost $ scp /var/folders/lg/30b4jczn223dpktp3kcwzrrr0000gn/T/beaker20140519-5481-1emp5oy centos-64-x64:/tmp/apply_manifest.pp.VITf22 {}
+[00;00m[00;37m
+centos-64-x64 15:40:01$ env PATH="/usr/bin:/opt/puppet-git-repos/hiera/bin:${PATH}" RUBYLIB="/opt/puppet-git-repos/hiera/lib:/opt/puppet-git-repos/hiera-puppet/lib:${RUBYLIB}" puppet apply  --verbose /tmp/apply_manifest.pp.VITf22
+[00;00m[00;33mWarning: Interrupt received; exiting...
+[00;00m[00;37m
+centos-64-x64 15:40:01$  rm -fr /tmp/vcsrepo.qtLYmH  
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.VITf22:6 on node centos-64-x64.corp.puppetlabs.net
+Wrapped exception:
+Invalid resource type vcsrepo[00;00m[01;30m
+[00;00m[01;30mError: Puppet::Parser::AST::Resource failed with error ArgumentError: Invalid resource type vcsrepo at /tmp/apply_manifest.pp.VITf22:6 on node centos-64-x64.corp.puppetlabs.net[00;00m[01;30m
+[00;00m[00;37m
+centos-64-x64 executed in 0.33 seconds
+[00;00m

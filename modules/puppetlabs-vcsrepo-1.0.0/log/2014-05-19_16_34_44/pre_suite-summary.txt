@@ -1,0 +1,23 @@
+    Test Suite: pre_suite @ 2014-05-19 16:34:44 -0400
+
+    - Host Configuration Summary -
+
+
+            - Test Case Summary for suite 'pre_suite' -
+     Total Suite Time: 55.79 seconds
+    Average Test Time: 55.79 seconds
+            Attempted: 1
+               Passed: 1
+               Failed: 0
+              Errored: 0
+              Skipped: 0
+              Pending: 0
+
+    - Specific Test Case Status -
+      
+Failed Tests Cases:
+Errored Tests Cases:
+Skipped Tests Cases:
+Pending Tests Cases:
+
+
