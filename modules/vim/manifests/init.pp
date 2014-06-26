@@ -21,7 +21,7 @@ class vim {
 		source => 'https://github.com/kien/ctrlp.vim',
 		revision => 'master',
 	}
-	
+
 	vcsrepo { "/home/$::id/.vim/bundle/nerdtree":
 		ensure => present,
 		provider => git,
@@ -49,7 +49,7 @@ class vim {
 		source => 'https://github.com/bling/vim-airline.git',
 		revision => 'master',
 	}
-	
+
 	vcsrepo { "/home/$::id/.vim/bundle/vim-colors-wombat":
 		ensure => present,
 		provider => git,
@@ -61,6 +61,13 @@ class vim {
 		ensure => present,
 		provider => git,
 		source => 'https://github.com/airblade/vim-gitgutter.git',
+		revision => 'master',
+	}
+
+	vcsrepo { "/home/$::id/.vim/bundle/vim-indent-guides":
+		ensure => present,
+		provider => git,
+		source => 'https://github.com/nathanaelkane/vim-indent-guides.git',
 		revision => 'master',
 	}
 
