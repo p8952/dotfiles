@@ -25,6 +25,10 @@ filetype on
 filetype indent on
 filetype plugin on
 
+"" CtrlP
+let g:ctrlp_max_depth=20
+let g:ctrlp_max_files=1000
+
 "" NERDTree
 let g:NERDTreeDirArrows=0
 autocmd VimEnter * NERDTree
