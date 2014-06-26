@@ -31,6 +31,9 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+"" Airline
+set timeoutlen=50
+
 "" Indent Guides
 let g:indent_guides_auto_colors=0
 autocmd VimEnter * IndentGuidesEnable
