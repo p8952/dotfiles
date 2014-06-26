@@ -64,11 +64,4 @@ class vim {
 		revision => 'master',
 	}
 
-	vcsrepo { "/home/$::id/.vim/bundle/vim-indent-guides":
-		ensure => present,
-		provider => git,
-		source => 'https://github.com/nathanaelkane/vim-indent-guides.git',
-		revision => 'master',
-	}
-
 }
