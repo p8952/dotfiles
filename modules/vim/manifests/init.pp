@@ -43,6 +43,13 @@ class vim {
 		revision => 'master',
 	}
 
+	vcsrepo { "/home/$::id/.vim/bundle/vim-airline":
+		ensure => present,
+		provider => git,
+		source => 'https://github.com/bling/vim-airline.git',
+		revision => 'master',
+	}
+	
 	vcsrepo { "/home/$::id/.vim/bundle/vim-colors-wombat":
 		ensure => present,
 		provider => git,
