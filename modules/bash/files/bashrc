@@ -20,22 +20,30 @@ TERM="rxvt-unicode-256color"
 PATH=$PATH:~/.gem/ruby/1.9.1/bin/
 PATH=$PATH:~/.gem/ruby/2.0.0/bin/
 
+function maybe-sudo() {
+	if [[ $EUID != 0 ]]; then
+		sudo $@
+	else
+		$@
+	fi
+}
+
 function emerge-cleanup() {
-	sudo emerge --depclean
-	sudo revdep-rebuild
-	sudo rm -rfv /var/tmp/portage/*
-	sudo rm -rfv /usr/portage/distfiles/*
+	maybe-sudo emerge --depclean
+	maybe-sudo revdep-rebuild
+	maybe-sudo rm -rfv /var/tmp/portage/*
+	maybe-sudo rm -rfv /usr/portage/distfiles/*
 }
 
 function gem-cleanup() {
 	current_ruby_version=$(eselect ruby list | grep '*' | awk '{print $2}')
 	for ruby_version in $(eselect ruby list | tail -n +2 | awk '{print $2}'); do
-		sudo eselect ruby set $ruby_version
+		maybe-sudo eselect ruby set $ruby_version
 		for gem in $(gem list --no-versions); do
 			gem uninstall -aIx $gem
 		done
 	done
-	sudo eselect ruby set $current_ruby_version
+	maybe-sudo eselect ruby set $current_ruby_version
 }
 
 alias hist="history | grep"
