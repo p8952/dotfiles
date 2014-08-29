@@ -1,5 +1,11 @@
 node default {
 	include bash
 	include vim
-	include xinit
+
+	case defined(Package['x11-apps/xinit']) {
+		true: {
+			include xinit
+		}
+	}
+
 }
