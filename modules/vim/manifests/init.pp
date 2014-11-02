@@ -42,6 +42,13 @@ class vim {
 		revision => 'master',
 	}
 
+	vcsrepo { "$home_dir/.vim/bundle/syntastic":
+		ensure => present,
+		provider => git,
+		source => 'https://github.com/scrooloose/syntastic.git',
+		revision => 'master',
+	}
+
 	vcsrepo { "$home_dir/.vim/bundle/tagbar":
 		ensure => present,
 		provider => git,
