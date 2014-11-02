@@ -50,7 +50,7 @@ alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
 alias pptp-down="maybe-sudo poff OSTC"
-alias pptp-up="maybe-sudo pon OSTC && maybe-sudo route add -net 192.168.7.0/24 gw 192.168.0.1"
+alias pptp-up="maybe-sudo pon OSTC"
 alias svim="maybe-sudo vim"
 
 alias ga="git add"
