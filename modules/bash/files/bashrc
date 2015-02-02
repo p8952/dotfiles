@@ -46,6 +46,9 @@ function gem-cleanup() {
 	maybe-sudo eselect ruby set $current_ruby_version
 }
 
+alias docker-ps-cleanup="docker rm $(docker ps -a -q)"
+alias docker-img-cleanup="docker rmi $(docker images -q)"
+
 alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
