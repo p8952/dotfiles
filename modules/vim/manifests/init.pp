@@ -1,5 +1,4 @@
 class vim {
-
 	if $::id == 'root' {
 		$home_dir = '/root'
 	} else {

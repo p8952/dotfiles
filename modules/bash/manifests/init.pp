@@ -1,5 +1,4 @@
 class bash {
-
 	if $::id == 'root' {
 		$home_dir = '/root'
 	} else {
@@ -15,5 +14,4 @@ class bash {
 		ensure => present,
 		source => 'puppet:///modules/bash/bash_profile',
 	}
-
 }
