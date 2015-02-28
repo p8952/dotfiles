@@ -56,7 +56,7 @@ function btrfs-df() {
 
 function docker-ps-cleanup() {
 	for docker_ps in $(maybe-sudo docker ps -a -q); do
-		maybe-sudo docker rm $docker_ps
+		maybe-sudo docker rm -fv $docker_ps
 	done
 }
 
