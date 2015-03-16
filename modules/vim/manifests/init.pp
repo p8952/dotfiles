@@ -34,13 +34,6 @@ class vim {
 		revision => 'master',
 	}
 
-	vcsrepo { "$home_dir/.vim/bundle/supertab":
-		ensure => present,
-		provider => git,
-		source => 'https://github.com/ervandew/supertab.git',
-		revision => 'master',
-	}
-
 	vcsrepo { "$home_dir/.vim/bundle/syntastic":
 		ensure => present,
 		provider => git,
@@ -73,6 +66,20 @@ class vim {
 		ensure => present,
 		provider => git,
 		source => 'https://github.com/airblade/vim-gitgutter.git',
+		revision => 'master',
+	}
+
+	vcsrepo { "$home_dir/.vim/bundle/vim-go":
+		ensure => present,
+		provider => git,
+		source => 'https://github.com/fatih/vim-go.git',
+		revision => 'master',
+	}
+
+	vcsrepo { "$home_dir/.vim/bundle/YouCompleteMe":
+		ensure => present,
+		provider => git,
+		source => 'https://github.com/Valloric/YouCompleteMe.git',
 		revision => 'master',
 	}
 

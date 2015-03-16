@@ -38,5 +38,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "" Airline
 set timeoutlen=50
 
+"" YCM
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=0
+
 "" Maps
 map <C-p> :CtrlP
