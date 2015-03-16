@@ -17,8 +17,10 @@ fi
 PS1="\[\e[0;32m\][\u@\h:\W]> \[\e[m\]"
 TERM="rxvt-unicode-256color"
 
-PATH=$PATH:~/.gem/ruby/1.9.1/bin/
-PATH=$PATH:~/.gem/ruby/2.0.0/bin/
+export PATH=$PATH:~/.gem/ruby/1.9.1/bin/
+export PATH=$PATH:~/.gem/ruby/2.0.0/bin/
+export GOPATH=~/projects/gocode/
+export PATH=$PATH:$GOPATH/bin/
 
 function maybe-sudo() {
 	if [[ $EUID != 0 ]]; then
