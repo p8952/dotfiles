@@ -44,6 +44,7 @@ function gem-cleanup() {
 		for gem in $(gem list --no-versions); do
 			gem uninstall -aIx $gem
 		done
+		gem install bundler --no-rdoc --no-ri
 	done
 	maybe-sudo eselect ruby set $current_ruby_version
 }
