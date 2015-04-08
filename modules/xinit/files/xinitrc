@@ -5,4 +5,5 @@ setxkbmap -option caps:escape
 setxkbmap gb
 xrdb ~/.Xresources
 wicd-gtk --tray &
+volti &
 exec i3
