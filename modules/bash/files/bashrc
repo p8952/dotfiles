@@ -69,11 +69,24 @@ function docker-img-cleanup() {
 	done
 }
 
+function vpnc-up() {
+	maybe-sudo vpnc
+	echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
+	maybe-sudo route add -net 10.212.0.0/16 gw 10.212.238.2 dev tun0
+	maybe-sudo route add -net 10.130.0.0/16 gw 62.239.20.17 dev tun0
+	maybe-sudo route del -net 10.212.238.0/27 gw 0.0.0.0 tun0
+	maybe-sudo route del -net 0.0.0.0/0 gw 0.0.0.0 dev tun0
+}
+
+function vpnc-down() {
+	maybe-sudo vpnc-disconnect
+	echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
+	maybe-sudo route del -net 0.0.0.0/0 gw 192.168.47.253 dev enp5s0
+}
+
 alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
-alias pptp-down="maybe-sudo poff OSTC"
-alias pptp-up="maybe-sudo pon OSTC"
 alias svim="maybe-sudo vim"
 
 alias ga="git add"
