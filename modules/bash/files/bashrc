@@ -19,8 +19,6 @@ TERM="rxvt-unicode-256color"
 
 export PATH=$PATH:~/.gem/ruby/1.9.1/bin/
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin/
-export GOPATH=~/projects/gocode/
-export PATH=$PATH:$GOPATH/bin/
 
 function maybe-sudo() {
 	if [[ $EUID != 0 ]]; then
@@ -88,6 +86,11 @@ alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
 alias svim="maybe-sudo vim"
+
+if [[ -f /usr/bin/nvim ]]; then
+	alias vim="nvim"
+	alias svim="maybe-sudo nvim"
+fi
 
 alias ga="git add"
 alias gc="git commit"

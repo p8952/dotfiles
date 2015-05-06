@@ -10,6 +10,11 @@ class vim {
     source => 'puppet:///modules/vim/vimrc',
   }
 
+  file { "${home_dir}/.nvimrc":
+    ensure => link,
+    target => "${home_dir}/.vimrc"
+  }
+
   file { [
     "${home_dir}/.vim",
     "${home_dir}/.vim/autoload",
@@ -17,6 +22,11 @@ class vim {
   ]:
     ensure => directory,
     before => File["${home_dir}/.vim/autoload/pathogen.vim"],
+  }
+
+  file { "${home_dir}/.nvim":
+    ensure => link,
+    target => "${home_dir}/.vim"
   }
 
   file { "${home_dir}/.vim/autoload/pathogen.vim":
