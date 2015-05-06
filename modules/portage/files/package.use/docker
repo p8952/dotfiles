@@ -1,0 +1,2 @@
+app-emulation/docker btrfs -device-mapper
+sys-devel/llvm multitarget

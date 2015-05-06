@@ -1,10 +1,4 @@
 class vim {
-  if $::id == 'root' {
-    $home_dir = '/root'
-  } else {
-    $home_dir = "/home/${::id}"
-  }
-
   file { "${home_dir}/.vimrc":
     ensure => present,
     source => 'puppet:///modules/vim/vimrc',

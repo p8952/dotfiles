@@ -1,0 +1,4 @@
+media-video/mpv
+media-video/ffmpeg
+
+=media-libs/libass-0.12.1 ~amd64

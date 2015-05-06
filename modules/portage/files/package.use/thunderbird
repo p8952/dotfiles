@@ -1,0 +1,4 @@
+app-crypt/pinentry gtk
+dev-lang/python sqlite
+mail-client/thunderbird -alsa -dbus -jit -lightning
+media-libs/libpng apng

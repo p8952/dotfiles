@@ -1,10 +1,4 @@
 class bash {
-  if $::id == 'root' {
-    $home_dir = '/root'
-  } else {
-    $home_dir = "/home/${::id}"
-  }
-
   file { "${home_dir}/.bashrc":
     ensure => present,
     source => 'puppet:///modules/bash/bashrc',

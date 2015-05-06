@@ -1,0 +1,2 @@
+media-video/mpv lua -dvd -enca -iconv -mpg123 -xscreensaver
+media-libs/libass -enca

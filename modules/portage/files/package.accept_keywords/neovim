@@ -1,0 +1,9 @@
+=app-editors/neovim-9999 **
+=dev-libs/libtermkey-0.17 ~amd64
+=dev-libs/libuv-1.4.2 ~amd64
+=dev-libs/libvterm-neovim-0.0_pre20150309 ~amd64
+=dev-libs/msgpack-1.1.0 ~amd64
+=dev-libs/unibilium-1.1.2 ~amd64
+=dev-lua/messagepack-0.3.2 ~amd64
+=dev-python/neovim-python-client-0.0.32 ~amd64
+=dev-python/trollius-1.0.4 ~amd64
