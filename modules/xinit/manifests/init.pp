@@ -1,16 +1,16 @@
 class xinit {
-    if $::id == 'root' {
+  if $::id == 'root' {
     $home_dir = '/root'
   } else {
     $home_dir = "/home/${::id}"
   }
 
-  file { "/home/${::id}/.xinitrc":
+  file { "${home_dir}/.xinitrc":
     ensure => present,
     source => 'puppet:///modules/xinit/xinitrc',
   }
 
-  file { "/home/${::id}/.Xresources":
+  file { "${home_dir}/.Xresources":
     ensure => present,
     source => 'puppet:///modules/xinit/Xresources',
   }
