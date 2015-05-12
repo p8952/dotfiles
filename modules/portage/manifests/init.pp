@@ -25,18 +25,9 @@ class portage {
   }
 
   file { '/etc/portage/repos.conf':
-    ensure  => directory
-  }
-
-  file { '/etc/portage/repos.conf/gentoo.conf':
-    ensure  => file,
-    source  => 'puppet:///modules/portage/gentoo.conf',
-    require => File['/etc/portage/repos.conf']
-  }
-
-  file { '/etc/portage/repos.conf/yngwin.conf':
-    ensure  => file,
-    source  => 'puppet:///modules/portage/yngwin.conf',
-    require => File['/etc/portage/repos.conf']
+    ensure  => directory,
+    recurse => true,
+    purge   => true,
+    source  => 'puppet:///modules/portage/repos.conf'
   }
 }
