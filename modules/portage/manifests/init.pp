@@ -23,4 +23,20 @@ class portage {
     purge   => true,
     source  => 'puppet:///modules/portage/package.accept_keywords'
   }
+
+  file { '/etc/portage/repos.conf':
+    ensure  => directory
+  }
+
+  file { '/etc/portage/repos.conf/gentoo.conf':
+    ensure  => file,
+    source  => 'puppet:///modules/portage/gentoo.conf',
+    require => File['/etc/portage/repos.conf']
+  }
+
+  file { '/etc/portage/repos.conf/yngwin.conf':
+    ensure  => file,
+    source  => 'puppet:///modules/portage/yngwin.conf',
+    require => File['/etc/portage/repos.conf']
+  }
 }
