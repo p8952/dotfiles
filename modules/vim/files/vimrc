@@ -26,6 +26,7 @@ filetype indent on
 filetype plugin on
 
 "" CtrlP
+map <C-p> :CtrlP
 let g:ctrlp_max_depth=20
 let g:ctrlp_max_files=1000
 
@@ -38,9 +39,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "" Airline
 set timeoutlen=50
 
+"" Expand Region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 "" YCM
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
-
-"" Maps
-map <C-p> :CtrlP

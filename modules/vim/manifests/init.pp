@@ -70,17 +70,17 @@ class vim {
     revision => 'master',
   }
 
+  vcsrepo { "${home_dir}/.vim/bundle/vim-expand-region":
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/terryma/vim-expand-region.git',
+    revision => 'master',
+  }
+
   vcsrepo { "${home_dir}/.vim/bundle/vim-gitgutter":
     ensure   => present,
     provider => git,
     source   => 'https://github.com/airblade/vim-gitgutter.git',
-    revision => 'master',
-  }
-
-  vcsrepo { "${home_dir}/.vim/bundle/vim-go":
-    ensure   => present,
-    provider => git,
-    source   => 'https://github.com/fatih/vim-go.git',
     revision => 'master',
   }
 
