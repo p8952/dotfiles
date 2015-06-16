@@ -70,6 +70,13 @@ class vim {
     revision => 'master',
   }
 
+  vcsrepo { "${home_dir}/.vim/bundle/vim-elixir":
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/elixir-lang/vim-elixir.git',
+    revision => 'master',
+  }
+
   vcsrepo { "${home_dir}/.vim/bundle/vim-expand-region":
     ensure   => present,
     provider => git,
