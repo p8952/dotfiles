@@ -15,7 +15,7 @@ fi
 
 # Put your fun stuff here.
 PS1="\[\e[0;32m\][\u@\h:\W]> \[\e[m\]"
-TERM="rxvt-unicode-256color"
+TERM="rxvt-unicode"
 
 export PATH=$PATH:~/.gem/ruby/1.9.1/bin/
 export PATH=$PATH:~/.gem/ruby/2.0.0/bin/
