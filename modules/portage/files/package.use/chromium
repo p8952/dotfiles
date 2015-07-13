@@ -1,2 +1,3 @@
 app-crypt/gcr gtk
+media-libs/libvpx postproc
 sys-libs/zlib minizip
