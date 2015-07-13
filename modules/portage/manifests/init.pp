@@ -24,6 +24,13 @@ class portage {
     source  => 'puppet:///modules/portage/package.accept_keywords'
   }
 
+  file { '/etc/portage/package.mask':
+    ensure  => directory,
+    recurse => true,
+    purge   => true,
+    source  => 'puppet:///modules/portage/package.mask'
+  }
+
   file { '/etc/portage/repos.conf':
     ensure  => directory,
     recurse => true,
