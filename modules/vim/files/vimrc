@@ -25,14 +25,17 @@ filetype on
 filetype indent on
 filetype plugin on
 
-"" Mapping
+"" Mappings
 let mapleader = "\<Space>"
 map q: :q
+nnoremap <Tab> :bnext<CR>
+cnoreabbrev wq w<bar>bp<bar>sp<bar>bn<bar>bd<CR>
+cnoreabbrev q  bp<bar>sp<bar>bn<bar>bd<CR>
 
 "" CtrlP
 map <C-p> :CtrlP
 let g:ctrlp_max_depth=20
-let g:ctrlp_max_files=1000
+let g:ctrlp_max_files=0
 
 "" NERDTree
 let g:NERDTreeDirArrows=0
