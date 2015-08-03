@@ -82,6 +82,20 @@ function vpnc-down() {
 	maybe-sudo route del -net 0.0.0.0/0 gw 192.168.47.253 dev enp5s0
 }
 
+function get-photos() {
+	import_dir="$HOME/media/Media/Photography/Import"
+	camera='Canon EOS 100D'
+	if gphoto2 --auto-detect | grep -qw "$camera"; then
+		if [[ -d "$import_dir" ]]; then
+			(cd "$import_dir" && gphoto2 --get-all-files --skip-existing)
+		else
+			echo "Directory '$import_dir' does not exist!"
+		fi
+	else
+		echo "Camera '$camera' does not exist!"
+	fi
+}
+
 alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
