@@ -1,12 +1,11 @@
 " Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle.vim
 call vundle#begin()
 Plugin 'vundlevim/vundle.vim'
 
 "" Plugins
-Plugin 'valloric/youcompleteme.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'bling/vim-airline.git'
 Plugin 'elixir-lang/vim-elixir.git'
@@ -17,6 +16,7 @@ Plugin 'rodjek/vim-puppet.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'terryma/vim-expand-region.git'
+Plugin 'valloric/youcompleteme.git'
 call vundle#end()
 
 "" Core

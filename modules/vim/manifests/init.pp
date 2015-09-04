@@ -14,7 +14,7 @@ class vim {
     "${home_dir}/.vim/bundle",
   ]:
     ensure => directory,
-    before => Vcsrepo["${home_dir}/.vim/bundle/Vundle.vim"],
+    before => Vcsrepo["${home_dir}/.vim/bundle/vundle.vim"],
   }
 
   file { "${home_dir}/.nvim":
@@ -22,10 +22,10 @@ class vim {
     target => "${home_dir}/.vim",
   }
 
-  vcsrepo { "${home_dir}/.vim/bundle/Vundle.vim":
+  vcsrepo { "${home_dir}/.vim/bundle/vundle.vim":
     ensure   => present,
     provider => git,
-    source   => 'https://github.com/VundleVim/Vundle.vim.git',
+    source   => 'https://github.com/vundlevim/vundle.vim.git',
     revision => 'master',
   }
 }
