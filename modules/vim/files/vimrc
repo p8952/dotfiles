@@ -22,6 +22,7 @@ call vundle#end()
 "" Core
 set encoding=utf-8
 set nu
+set mouse=
 set nowrap
 set tabstop=4 shiftwidth=4
 set backspace=indent,eol,start
