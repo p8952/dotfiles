@@ -10,7 +10,7 @@ EMERGE_DEFAULT_OPTS="--jobs=<%=@processorcount%> --load-average=<%=@processorcou
 # USE Flags
 CPU_FLAGS_X86="<%=@cpu_flags%>"
 <%if @role == 'pc'-%>
-USE="${USE} 256-color abi_x86_32 cpi alsa dts gtkstyle jpeg icu ogg opengl png spell threads theora unicode vaapi vorbis vpx X xcb xft xkb"
+USE="${USE} 256-color abi_x86_32 cpi alsa dts gtkstyle jpeg icu ogg opengl png spell threads theora unicode vaapi vorbis vpx x264 X xcb xft xkb"
 <%end-%>
 USE="${USE} -cups -introspection -ipv6 -libav -pango -perl -pulseaudio -python -sendmail -themes -vala"
 RUBY_TARGETS="${RUBY_TARGETS} ruby21"
