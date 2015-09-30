@@ -1,5 +1,7 @@
 dev-util/shellcheck
+=dev-haskell/mtl-2.2.1 ~amd64
 =dev-haskell/parsec-3.1.5 ~amd64
 =dev-haskell/quickcheck-2.7.6 ~amd64
 =dev-haskell/tf-random-0.5 ~amd64
+=dev-haskell/transformers-0.4.3.0 ~amd64
 =dev-lang/ghc-7.8.4 ~amd64
