@@ -101,6 +101,8 @@ alias hist="history | grep"
 alias http="ruby -run -e httpd . -p 9090"
 alias ls="ls -lh --color=auto --group-directories-first"
 alias svim="maybe-sudo vim"
+alias tmux="TERM=screen-256color-bce tmux"
+alias screen="tmux"
 
 if [[ -f /usr/bin/nvim ]]; then
 	alias vim="nvim"
