@@ -1,2 +1,2 @@
 net-voip/linphone gtk
-media-libs/mediastreamer -theora -X
+media-libs/mediastreamer -opengl -theora -X
