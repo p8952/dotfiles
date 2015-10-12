@@ -8,9 +8,9 @@ Plugin 'vundlevim/vundle.vim'
 "" Plugins
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'bling/vim-airline.git'
-Plugin 'elixir-lang/vim-elixir.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar.git'
+Plugin 'marijnh/tern_for_vim'
 Plugin 'p8952/vim-colors-wombat.git'
 Plugin 'rodjek/vim-puppet.git'
 Plugin 'scrooloose/nerdtree.git'
@@ -20,62 +20,74 @@ Plugin 'valloric/youcompleteme.git'
 call vundle#end()
 
 "" Core
+set backspace=indent,eol,start
+set cursorline
 set encoding=utf-8
-set nu
+set lazyredraw
 set mouse=
 set nowrap
-set tabstop=4 shiftwidth=4
-set backspace=indent,eol,start
+set number
+set showcmd
+set showmatch
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'}]%=Col:%c,Line:%l
+set wildmenu
+
+"" Tabs
+set expandtab
+set softtabstop=4
+set tabstop=4
 
 "" Style
-syntax enable
+colorscheme wombat256
+set background=dark
 set colorcolumn=80
 set synmaxcol=180
-set background=dark
-colorscheme wombat256
+syntax enable
 
-"" Searching
+"" Search
 set hlsearch
 set incsearch
 set ignorecase
 
 "" Filetype
-filetype on
 filetype indent on
+filetype on
 filetype plugin on
 
 "" Mappings
+cnoreabbrev q  bp<bar>sp<bar>bn<bar>bd<CR>
+cnoreabbrev wq w<bar>bp<bar>sp<bar>bn<bar>bd<CR>
 let mapleader = "\<Space>"
 map q: :q
 nnoremap <Tab> :bnext<CR>
-cnoreabbrev wq w<bar>bp<bar>sp<bar>bn<bar>bd<CR>
-cnoreabbrev q  bp<bar>sp<bar>bn<bar>bd<CR>
 
 "" CtrlP
-map <C-p> :CtrlP
+let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_max_depth=20
 let g:ctrlp_max_files=0
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+map <C-p> :CtrlP
 
 "" NERDTree
-let g:NERDTreeDirArrows=0
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeDirArrows=0
 
 "" Airline
-set timeoutlen=50
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
+set timeoutlen=50
 
 "" Expand Region
-vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
 
 "" YCM
-set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
+set completeopt-=preview
