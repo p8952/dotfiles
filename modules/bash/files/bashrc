@@ -39,12 +39,12 @@ function emerge-cleanup() {
 function gem-cleanup() {
 	current_ruby_version=$(eselect ruby list | grep '*' | awk '{print $2}')
 	for ruby_version in $(eselect ruby list | tail -n +2 | awk '{print $2}'); do
-		maybe-sudo eselect ruby set $ruby_version
+		maybe-sudo eselect ruby set "$ruby_version"
 		for gem in $(gem list --no-versions); do
-			gem uninstall -aIx $gem
+			gem uninstall -aIx "$gem"
 		done
 	done
-	maybe-sudo eselect ruby set $current_ruby_version
+	maybe-sudo eselect ruby set "$current_ruby_version"
 	gem install bundler --no-rdoc --no-ri
 }
 
@@ -58,13 +58,13 @@ function btrfs-df() {
 
 function docker-ps-cleanup() {
 	for docker_ps in $(maybe-sudo docker ps -a -q); do
-		maybe-sudo docker rm -fv $docker_ps
+		maybe-sudo docker rm -fv "$docker_ps"
 	done
 }
 
 function docker-img-cleanup() {
 	for docker_img in $(maybe-sudo docker images -q); do
-		maybe-sudo docker rmi $docker_img
+		maybe-sudo docker rmi "$docker_img"
 	done
 }
 
@@ -103,6 +103,7 @@ alias ls="ls -lh --color=auto --group-directories-first"
 alias svim="maybe-sudo vim"
 alias tmux="TERM=screen-256color-bce tmux"
 alias screen="tmux"
+alias ack="ag"
 
 if [[ -f /usr/bin/nvim ]]; then
 	alias vim="nvim"
