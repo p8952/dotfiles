@@ -6,4 +6,5 @@ setxkbmap gb
 xrdb ~/.Xresources
 wicd-gtk --tray &
 volti &
+dropbox &
 exec i3
