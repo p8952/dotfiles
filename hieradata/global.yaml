@@ -1,0 +1,26 @@
+---
+nodes:
+        thinkpad-x220:
+                role: 'pc'
+        asus-n550jk:
+                role: 'pc'
+
+classes:
+        - 'bash'
+        - 'portage'
+        - 'vim'
+
+packages:
+        - 'app-admin/puppet'
+        - 'app-admin/sudo'
+        - 'app-admin/syslog-ng'
+        - 'app-editors/vim'
+        - 'app-misc/tmux'
+        - 'app-portage/eix'
+        - 'app-portage/gentoolkit'
+        - 'dev-vcs/git'
+        - 'net-misc/ntp'
+        - 'sys-boot/grub'
+        - 'sys-kernel/linux-firmware'
+        - 'sys-process/cronie'
+        - 'sys-process/htop'
