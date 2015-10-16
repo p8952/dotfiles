@@ -1,6 +1,6 @@
 ---
 classes:
-        - 'gtk'
+        - 'gui'
         - 'xinit'
 
 packages:

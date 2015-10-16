@@ -1,0 +1,43 @@
+general {
+        colors = true
+        interval = 1
+}
+
+order += "ethernet <%=@interface_ethernet%>"
+order += "wireless <%=@interface_wireless%>"
+order += "cpu_temperature 0"
+order += "load"
+order += "disk /"
+order += "battery 0"
+order += "time"
+
+ethernet <%=@interface_ethernet%> {
+        format_up = "ETH: %ip"
+        format_down = "ETH: N/A"
+}
+
+wireless <%=@interface_wireless%> {
+        format_up = "WAN: %ip"
+        format_down = "WAN: N/A"
+}
+
+cpu_temperature 0 {
+        format = "TEMP: %degrees%C"
+}
+
+load {
+        format = "LOAD: %5min"
+}
+
+disk / {
+        format = "HDD: %percentage_free"
+}
+
+battery 0 {
+        integer_battery_capacity = true
+        format = "BATT: %percentage"
+}
+
+time {
+        format = "%H:%M:%S"
+}
