@@ -8,7 +8,6 @@ packages:
         - 'app-admin/puppet-lint'
         - 'app-emulation/virtualbox'
         - 'dev-util/shellcheck'
-        - 'lxde-base/lxappearance'
         - 'media-fonts/symbola'
         - 'media-fonts/ubuntu-font-family'
         - 'media-gfx/scrot'
