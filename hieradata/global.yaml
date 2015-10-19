@@ -21,6 +21,7 @@ packages:
         - 'dev-vcs/git'
         - 'net-misc/ntp'
         - 'sys-boot/grub'
+        - 'sys-fs/btrfs-progs'
         - 'sys-kernel/linux-firmware'
         - 'sys-process/cronie'
         - 'sys-process/htop'
