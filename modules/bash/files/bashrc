@@ -104,7 +104,7 @@ alias svim="maybe-sudo vim"
 alias tmux="TERM=screen-256color-bce tmux"
 alias screen="tmux"
 alias ack="ag"
-alias npm-cleanup="npm ls -gp | awk -F'/' '/node_modules/ && !/node_modules.*node_modules/ && !/npm/ {print \$NF}' | maybe-sudo xargs npm -g rm"
+alias npm-cleanup="npm ls -gp | awk -F'/' '/node_modules/ && !/node_modules.*node_modules/ && !/npm/ {print $NF}' | maybe-sudo xargs npm -g rm"
 
 if [[ -f /usr/bin/nvim ]]; then
 	alias vim="nvim"
