@@ -25,7 +25,7 @@ packages:
         - 'sys-fs/sshfs-fuse'
         - 'sys-kernel/genkernel-next'
         - 'www-client/chromium'
-        - 'www-plugins/chrome-binary-plugins'
+        - 'www-plugins/chrome-binary-plugins:stable'
         - 'x11-apps/setxkbmap'
         - 'x11-apps/xrandr'
         - 'x11-apps/xset'
