@@ -1,5 +1,5 @@
 node default {
-  case $::id {
+  case $id {
     'root':  { $home_dir = '/root' }
     default: { $home_dir = "/home/${::id}" }
   }

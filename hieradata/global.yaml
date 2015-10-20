@@ -7,6 +7,7 @@ nodes:
 
 classes:
         - 'bash'
+        - 'cron'
         - 'portage'
         - 'vim'
 
@@ -25,3 +26,7 @@ packages:
         - 'sys-kernel/linux-firmware'
         - 'sys-process/cronie'
         - 'sys-process/htop'
+
+cronjobs:
+        - '0 * * * * /usr/sbin/ntpd --panicgate --quit'
+        - '0 1 * * * /usr/sbin/emaint sync -a && /usr/bin/eix-update'
