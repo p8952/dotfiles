@@ -12,6 +12,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'p8952/vim-colors-wombat.git'
+Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
@@ -34,8 +35,10 @@ set wildmenu
 
 "" Tabs
 set expandtab
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set smarttab
+set softtabstop=0
+set tabstop=8
 
 "" Style
 colorscheme wombat256
@@ -91,3 +94,6 @@ vmap v <Plug>(expand_region_expand)
 "" YCM
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
+
+"" Syntastic
+let g:syntastic_javascript_checkers = ['standard']
