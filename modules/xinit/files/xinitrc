@@ -8,3 +8,4 @@ wicd-gtk --tray &
 volti &
 dropbox &
 exec i3
+xsetroot -solid '#000000'
