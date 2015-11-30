@@ -1,6 +1,5 @@
 ! Term Settings
-URxvt*font: xft:Ubuntu Mono:pixelsize=14,style=regular,xft:Symbola:pixelsize=10
-URxvt*font: xft:Ubuntu Mono:pixelsize=14,style=regular
+URxvt*font: xft:Ubuntu Mono:pixelsize=14,style=regular,xft:Symbola:pixelsize=14
 URxvt*secondaryWheel: true
 URxvt*scrollBar: false
 
