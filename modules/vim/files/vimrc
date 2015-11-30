@@ -10,12 +10,12 @@ Plugin 'airblade/vim-gitgutter.git'
 Plugin 'bling/vim-airline.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar.git'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'p8952/vim-colors-wombat.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rodjek/vim-puppet.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/syntastic.git'
+Plugin 'ternjs/tern_for_vim'
 Plugin 'terryma/vim-expand-region.git'
 Plugin 'valloric/youcompleteme.git'
 call vundle#end()
@@ -75,8 +75,7 @@ map <C-p> :CtrlP
 "" NERDTree
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let g:NERDTreeDirArrows=0
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "" Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -94,6 +93,3 @@ vmap v <Plug>(expand_region_expand)
 "" YCM
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
-
-"" Syntastic
-let g:syntastic_javascript_checkers = ['standard']
