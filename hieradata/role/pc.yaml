@@ -15,6 +15,7 @@ packages:
         - 'media-gfx/scrot'
         - 'media-sound/alsa-utils'
         - 'media-sound/volti'
+        - 'media-video/mpv'
         - 'net-analyzer/tcpdump'
         - 'net-irc/hexchat'
         - 'net-libs/nodejs'
