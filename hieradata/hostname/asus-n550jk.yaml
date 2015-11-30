@@ -1,6 +1,5 @@
 ---
 packages:
-        - 'dev-vcs/subversion'
         - 'net-analyzer/nmap'
         - 'net-analyzer/wireshark'
         - 'net-im/skype'
