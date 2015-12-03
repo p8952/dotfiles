@@ -1,32 +1,33 @@
 ---
 nodes:
-        thinkpad-x220:
-                role: 'pc'
-        asus-n550jk:
-                role: 'pc'
+  thinkpad-x220:
+    role: 'pc'
+  asus-n550jk:
+    role: 'pc'
 
 classes:
-        - 'bash'
-        - 'cron'
-        - 'portage'
-        - 'vim'
+  - 'bash'
+  - 'cron'
+  - 'portage'
+  - 'vim'
 
 packages:
-        - 'app-admin/puppet'
-        - 'app-admin/sudo'
-        - 'app-admin/syslog-ng'
-        - 'app-editors/vim'
-        - 'app-misc/tmux'
-        - 'app-portage/eix'
-        - 'app-portage/gentoolkit'
-        - 'dev-vcs/git'
-        - 'net-misc/ntp'
-        - 'sys-boot/grub'
-        - 'sys-fs/btrfs-progs'
-        - 'sys-kernel/linux-firmware'
-        - 'sys-process/cronie'
-        - 'sys-process/htop'
+  - 'app-admin/puppet'
+  - 'app-admin/sudo'
+  - 'app-admin/syslog-ng'
+  - 'app-editors/vim'
+  - 'app-misc/tmux'
+  - 'app-portage/eix'
+  - 'app-portage/gentoolkit'
+  - 'dev-util/strace'
+  - 'dev-vcs/git'
+  - 'net-misc/ntp'
+  - 'sys-boot/grub'
+  - 'sys-fs/btrfs-progs'
+  - 'sys-kernel/linux-firmware'
+  - 'sys-process/cronie'
+  - 'sys-process/htop'
 
 cronjobs:
-        - '0 * * * * /usr/sbin/ntpd --panicgate --quit'
-        - '0 1 * * * /usr/sbin/emaint sync -a && /usr/bin/eix-update'
+  - '0 * * * * /usr/sbin/ntpd --panicgate --quit'
+  - '0 1 * * * /usr/sbin/emaint sync -a && /usr/bin/eix-update'
