@@ -9,6 +9,7 @@ packages:
   - 'app-editors/neovim'
   - 'app-emulation/docker'
   - 'app-emulation/virtualbox'
+  - 'app-misc/jq'
   - 'dev-util/shellcheck'
   - 'media-fonts/symbola'
   - 'media-fonts/ubuntu-font-family'
