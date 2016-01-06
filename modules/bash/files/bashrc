@@ -9,8 +9,8 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+  # Shell is non-interactive.  Be done now!
+  return
 fi
 
 # Put your fun stuff here.
@@ -22,79 +22,86 @@ export PATH=$PATH:~/.gem/ruby/2.0.0/bin/
 export PATH=$PATH:~/.gem/ruby/2.1.0/bin/
 
 function maybe-sudo() {
-	if [[ $EUID != 0 ]]; then
-		sudo $@
-	else
-		$@
-	fi
+if [[ $EUID != 0 ]]; then
+  sudo "$@"
+else
+  "$@"
+fi
 }
 
 function emerge-cleanup() {
-	maybe-sudo emerge --depclean
-	maybe-sudo revdep-rebuild
-	maybe-sudo rm -rfv /var/tmp/portage/*
-	maybe-sudo rm -rfv /usr/portage/distfiles/*
+maybe-sudo emerge --depclean
+maybe-sudo revdep-rebuild
+maybe-sudo rm -rfv /var/tmp/portage/*
+maybe-sudo rm -rfv /usr/portage/distfiles/*
 }
 
 function gem-cleanup() {
-	current_ruby_version=$(eselect ruby list | grep '*' | awk '{print $2}')
-	for ruby_version in $(eselect ruby list | tail -n +2 | awk '{print $2}'); do
-		maybe-sudo eselect ruby set "$ruby_version"
-		for gem in $(gem list --no-versions); do
-			gem uninstall -aIx "$gem"
-		done
-	done
-	maybe-sudo eselect ruby set "$current_ruby_version"
-	gem install bundler --no-rdoc --no-ri
+current_ruby_version=$(eselect ruby list | grep '\*' | awk '{print $2}')
+for ruby_version in $(eselect ruby list | tail -n +2 | awk '{print $2}'); do
+  maybe-sudo eselect ruby set "$ruby_version"
+  for gem in $(gem list --no-versions); do
+    gem uninstall -aIx "$gem"
+  done
+done
+maybe-sudo eselect ruby set "$current_ruby_version"
+gem install bundler --no-rdoc --no-ri
+}
+
+function npm-cleanup() {
+for module in $(maybe-sudo npm ls -gp | awk -F'/' '/node_modules/ && !/node_modules.*node_modules/ && !/npm/ {print $NF}'); do
+  maybe-sudo npm -g rm "$module"
+done
+maybe-sudo npm -g install grunt-cli jshint
 }
 
 function btrfs-df() {
-	maybe-sudo df -h
-	echo ''
-	maybe-sudo btrfs filesystem df /
-	echo ''
-	maybe-sudo btrfs filesystem show
+maybe-sudo df -h
+echo ''
+maybe-sudo btrfs filesystem df /
+echo ''
+maybe-sudo btrfs filesystem show
 }
 
 function docker-ps-cleanup() {
-	for docker_ps in $(maybe-sudo docker ps -a -q); do
-		maybe-sudo docker rm -fv "$docker_ps"
-	done
+for docker_ps in $(maybe-sudo docker ps -a -q); do
+  maybe-sudo docker rm -fv "$docker_ps"
+done
 }
 
 function docker-img-cleanup() {
-	for docker_img in $(maybe-sudo docker images -q); do
-		maybe-sudo docker rmi "$docker_img"
-	done
+for docker_img in $(maybe-sudo docker images -q); do
+  maybe-sudo docker rmi "$docker_img"
+done
 }
 
 function vpnc-up() {
-	maybe-sudo vpnc
-	echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
-	maybe-sudo route add -net 10.212.0.0/16 gw 10.212.238.2 dev tun0
-	maybe-sudo route add -net 10.130.0.0/16 gw 62.239.20.17 dev tun0
-	maybe-sudo route del -net 10.212.238.0/27 gw 0.0.0.0 tun0
-	maybe-sudo route del -net 0.0.0.0/0 gw 0.0.0.0 dev tun0
+maybe-sudo vpnc
+echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
+maybe-sudo route add -net 10.212.0.0/16 gw 10.212.238.2 dev tun0
+maybe-sudo route add -net 10.130.0.0/16 gw 62.239.20.17 dev tun0
+maybe-sudo route del -net 10.212.238.0/27 gw 0.0.0.0 tun0
+maybe-sudo route del -net 0.0.0.0/0 gw 0.0.0.0 dev tun0
 }
 
 function vpnc-down() {
-	maybe-sudo vpnc-disconnect
-	echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
-	maybe-sudo route del -net 0.0.0.0/0 gw 192.168.47.253 dev enp5s0
+maybe-sudo vpnc-disconnect
+echo -e "nameserver 192.168.47.21" | maybe-sudo tee /etc/resolv.conf > /dev/null
+maybe-sudo route del -net 0.0.0.0/0 gw 192.168.47.253 dev enp5s0
 }
 
 function get-photos() {
-	import_dir="$HOME/media/Media/Photography/Import"
-	camera='Canon EOS 100D'
-	if gphoto2 --auto-detect | grep -qw "$camera"; then
-		if [[ -d "$import_dir" ]]; then
-			(cd "$import_dir" && gphoto2 --get-all-files --skip-existing)
-		else
-			echo "Directory '$import_dir' does not exist!"
-		fi
-	else
-		echo "Camera '$camera' does not exist!"
-	fi
+import_dir="$HOME/media/Media/Photography/Import"
+camera='Canon EOS 100D'
+if gphoto2 --auto-detect | grep -qw "$camera"; then
+  if [[ -d "$import_dir" ]]; then
+    (cd "$import_dir" && gphoto2 --get-all-files --skip-existing)
+  else
+    echo "Directory '$import_dir' does not exist!"
+  fi
+else
+  echo "Camera '$camera' does not exist!"
+fi
 }
 
 alias hist="history | grep"
@@ -104,11 +111,10 @@ alias svim="maybe-sudo vim"
 alias tmux="TERM=screen-256color-bce tmux"
 alias screen="tmux"
 alias ack="ag"
-alias npm-cleanup="npm ls -gp | awk -F'/' '/node_modules/ && !/node_modules.*node_modules/ && !/npm/ {print $NF}' | maybe-sudo xargs npm -g rm"
 
 if [[ -f /usr/bin/nvim ]]; then
-	alias vim="nvim"
-	alias svim="maybe-sudo nvim"
+  alias vim="nvim"
+  alias svim="maybe-sudo nvim"
 fi
 
 alias ga="git add"
