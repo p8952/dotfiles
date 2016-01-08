@@ -52,7 +52,7 @@ function npm-cleanup() {
 for module in $(maybe-sudo npm ls -gp | awk -F'/' '/node_modules/ && !/node_modules.*node_modules/ && !/npm/ {print $NF}'); do
   maybe-sudo npm -g rm "$module"
 done
-maybe-sudo npm -g install grunt-cli jshint
+maybe-sudo npm -g install grunt-cli jshint node-inspector
 }
 
 function btrfs-df() {
