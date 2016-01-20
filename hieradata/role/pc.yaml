@@ -9,6 +9,7 @@ packages:
   - 'app-editors/neovim'
   - 'app-emulation/docker'
   - 'app-emulation/virtualbox'
+  - 'app-emulation/virtualbox-additions'
   - 'app-misc/jq'
   - 'dev-util/shellcheck'
   - 'media-fonts/symbola'
