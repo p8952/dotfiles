@@ -1,0 +1,17 @@
+=app-emulation/vagrant-1.8.1 ~amd64
+
+=dev-ruby/ffi-1.9.10 ~amd64
+=dev-ruby/rest-client-1.8.0-r1 ~amd64
+=dev-ruby/erubis-2.7.0-r2 ~amd64
+=dev-ruby/childprocess-0.5.9 ~amd64
+=dev-ruby/net-sftp-2.1.2-r2 ~amd64
+=dev-ruby/log4r-1.1.10-r2 ~amd64
+=dev-ruby/abstract-1.0.0-r3 ~amd64
+=dev-ruby/hashicorp-checkpoint-0.1.4 ~amd64
+=dev-ruby/net-ssh-3.0.2 ~amd64
+=virtual/ruby-ffi-3 ~amd64
+=dev-ruby/bundler-1.10.6 ~amd64
+=dev-ruby/i18n-0.7.0-r1 ~amd64
+=dev-ruby/net-scp-1.2.1 ~amd64
+=dev-ruby/listen-3.0.5 ~amd64
+=dev-ruby/rb-inotify-0.9.5-r1 ~amd64
