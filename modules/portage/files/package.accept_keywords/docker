@@ -1,2 +1,7 @@
 app-emulation/docker
 sys-fs/btrfs-progs
+
+=dev-go/blackfriday-1.2_p20150720 ~amd64
+=dev-go/go-md2man-1.0.3 ~amd64
+=dev-go/sanitized-anchor-name-0_pre20150822 ~amd64
+=sys-libs/libseccomp-2.2.3 ~amd64

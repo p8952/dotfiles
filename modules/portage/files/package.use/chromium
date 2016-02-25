@@ -1,3 +1,4 @@
+www-client/chromium gtk3 system-ffmpeg -hangouts
 app-crypt/gcr gtk
 media-libs/libvpx postproc
 sys-libs/zlib minizip
