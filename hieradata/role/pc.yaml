@@ -8,6 +8,7 @@ packages:
   - 'app-admin/puppet-lint'
   - 'app-editors/neovim'
   - 'app-emulation/docker'
+  - 'app-emulation/vagrant'
   - 'app-emulation/virtualbox'
   - 'app-emulation/virtualbox-additions'
   - 'app-misc/jq'
