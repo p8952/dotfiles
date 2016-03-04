@@ -1,7 +1,18 @@
 app-emulation/docker
+app-emulation/docker-compose
+app-emulation/docker-machine
 sys-fs/btrfs-progs
 
 =dev-go/blackfriday-1.2_p20150720 ~amd64
 =dev-go/go-md2man-1.0.3 ~amd64
 =dev-go/sanitized-anchor-name-0_pre20150822 ~amd64
+=dev-python/docker-py-1.7.0 ~amd64
+=dev-python/dockerpty-0.3.4 ~amd64
+=dev-python/functools32-3.2.3 ~amd64
+=dev-python/jsonschema-2.5.1-r2 ~amd64
+=dev-python/strict-rfc3339-0.6 ~amd64
+=dev-python/texttable-0.8.3 ~amd64
+=dev-python/vcversioner-2.14.0.0 ~amd64
+=dev-python/webcolors-1.5 ~amd64
+=dev-python/websocket-client-0.35.0 ~amd64
 =sys-libs/libseccomp-2.2.3 ~amd64
