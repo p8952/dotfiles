@@ -1,6 +1,7 @@
 app-emulation/docker
 app-emulation/docker-compose
 app-emulation/docker-machine
+dev-db/etcdctl
 sys-fs/btrfs-progs
 
 =dev-go/blackfriday-1.2_p20150720 ~amd64

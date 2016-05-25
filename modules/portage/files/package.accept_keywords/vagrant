@@ -1,5 +1,6 @@
 =app-emulation/vagrant-1.8.1 ~amd64
 
+=dev-ruby/net-ssh-2.10.0 ~amd64
 =dev-ruby/ffi-1.9.10 ~amd64
 =dev-ruby/rest-client-1.8.0-r1 ~amd64
 =dev-ruby/erubis-2.7.0-r2 ~amd64
